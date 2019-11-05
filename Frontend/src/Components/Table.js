@@ -4,6 +4,11 @@ import Row from './Row.js';
 
 export default class Table extends React.Component {
     render() {
-        return;
+        return (
+            <div>
+                <Header/>
+                <Row/>
+            </div>
+        );
     }
 }
