@@ -1,10 +1,10 @@
 import React from 'react';
-import Table from './Table.js';
+import Table from './components/Table.js';
 
 export default class App extends React.Component {
     render() {
         return (
-            <Table/>
+            <p>Hello World!</p>
         );
     }
 }
