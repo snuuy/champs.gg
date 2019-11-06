@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: "Source Sans Pro";
+    text-align: center;
 }
 
 .champ-row {
@@ -10,7 +11,6 @@
 .name-container {
     width: 150px;
     height: 75px;
-    text-align: center;
     border-left: 1px solid black;
 }
 
@@ -22,7 +22,6 @@
 
 .image-container {
     width: 75px;
-    text-align: center;
     border-left: 2px solid black;
 }
 
@@ -31,7 +30,6 @@
 }
 
 .roles-container {
-    text-align: center;
     width: 300px;
     border-left: 2px solid black;
 }
@@ -41,7 +39,6 @@
 }
 
 .rating-container {
-    text-align: center;
     width: 150px;
     border-left: 2px solid black;
     border-right: 1px solid black;
