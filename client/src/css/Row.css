@@ -1,52 +1,53 @@
 * {
     box-sizing: border-box;
+    font-family: "Source Sans Pro";
+}
+
+.champ-row {
+    outline: 1px solid black;
 }
 
 .name-container {
     width: 150px;
-    height: 100px;
-    border: 2px solid black;
+    height: 75px;
     text-align: center;
+    border-left: 1px solid black;
 }
 
 .champ-name {
-    font-family: "Product Sans";
     font-size: 22px;
     margin: 0;
     padding: 0;
 }
 
 .image-container {
-    width: 100px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    width: 75px;
     text-align: center;
+    border-left: 2px solid black;
 }
 
 .champ-icon {
-    height: 75px;
+    height: 50px;
 }
 
 .roles-container {
     text-align: center;
     width: 300px;
-    border: 2px solid black;
+    border-left: 2px solid black;
 }
 
-.roles {
-    font-family: "Product Sans";
+.champ-roles {
     font-size: 22px;
 }
 
 .rating-container {
     text-align: center;
     width: 150px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
 }
 
-.rating {
+.champ-rating {
     margin: 0;
 }
 

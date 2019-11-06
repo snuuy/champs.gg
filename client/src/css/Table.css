@@ -1,0 +1,9 @@
+.row:first-child {
+    border-top: 2px solid black;
+    width: 675px;
+}
+
+.row:last-child {
+    border-bottom: 2px solid black;
+    width: 675px;
+}
