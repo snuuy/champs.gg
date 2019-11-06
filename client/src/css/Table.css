@@ -2,6 +2,10 @@
     width: 775px;
 }
 
+.row:first-child {
+    border-top: 2px solid black;
+}
+
 .row:last-child {
     border-bottom: 2px solid black;
 }
