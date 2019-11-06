@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+.name-container {
+    width: 150px;
+    height: 100px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.champ-name {
+    font-family: "Product Sans";
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    width: 100px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+
+.champ-icon {
+    height: 75px;
+}
+
+.roles-container {
+    text-align: center;
+    width: 300px;
+    border: 2px solid black;
+}
+
+.roles {
+    font-family: "Product Sans";
+    font-size: 22px;
+}
+
+.rating-container {
+    text-align: center;
+    width: 150px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.rating {
+    margin: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
