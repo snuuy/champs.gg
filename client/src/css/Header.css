@@ -13,13 +13,8 @@
 }
 
 .name-header {
-    width: 250px;
+    width: 325px;
     border-left: 1px solid black;
-}
-
-.image-header {
-    width: 75px;
-    border-left: 2px solid black;
 }
 
 .roles-header {
