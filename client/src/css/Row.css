@@ -2,10 +2,12 @@
     box-sizing: border-box;
     font-family: "Source Sans Pro";
     text-align: center;
+    font-weight: 100;
 }
 
 .champ-row {
     outline: 1px solid black;
+    color: #D6CECE;
 }
 
 .name-container {
