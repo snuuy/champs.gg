@@ -21,7 +21,7 @@ export default class Row extends React.Component {
                         <h1 className="champ-name">{this.state.name}</h1>
                     </td>
                     <td className="image-container">
-                        <img className="champ-icon" src={this.state.icon} alt={this.state.name}/>
+                        <img className="champ-icon" src={this.state.icon}/>
                     </td>
                     <td className="roles-container">
                         <h1 className="champ-roles">{this.state.roles}</h1>
