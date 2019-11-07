@@ -1,0 +1,32 @@
+.header-name, .header-picture, .header-roles, .header-rating {
+    font-size: 22px;
+}
+
+.name-header, .image-header, .roles-header, .rating-header {
+    text-align: center;
+}
+
+.header-row {
+    outline: 1px solid black;
+}
+
+.name-header {
+    width: 250px;
+    border-left: 1px solid black;
+}
+
+.image-header {
+    width: 75px;
+    border-left: 2px solid black;
+}
+
+.roles-header {
+    width: 300px;
+    border-left: 2px solid black;
+}
+
+.rating-header {
+    width: 150px;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+}
