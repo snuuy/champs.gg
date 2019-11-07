@@ -3,7 +3,7 @@ export default function colour(rating) {
         return "#0B660B";
     }
     if (rating >= 4.0) {
-        return "#0A116E";
+        return "#1E364A";
     }
     if (rating >= 3.0) {
         return "#786711";
