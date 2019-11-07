@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button.js';
+import colour from '../logic/colour.js';
 import '../css/Row.css'
 
 export default class Row extends React.Component {
@@ -13,10 +14,14 @@ export default class Row extends React.Component {
         };
     }
 
+    rowStyles = {
+        backgroundColor: colour(this.props.rating),
+    }
+
     render() {
         return (
             <tbody>
-                <tr className="champ-row">
+                <tr className="champ-row" style={this.rowStyles}>
                     <td className="name-container">
                         <h1 className="champ-name">{this.state.name}</h1>
                     </td>

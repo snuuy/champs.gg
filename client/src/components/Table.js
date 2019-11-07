@@ -19,6 +19,13 @@ export default class Table extends React.Component {
                 </div>
                 <div className="row">
                     <Row
+                    name="Qiyana"
+                    icon="https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/Qiyana.png"
+                    roles="Top, Mid, Jungle"
+                    rating="4.03"/>
+                </div>
+                <div className="row">
+                    <Row
                     name="Lucian"
                     icon="https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/Lucian.png"
                     roles="Bot"
