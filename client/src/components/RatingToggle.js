@@ -6,15 +6,15 @@ export default class RatingToggle extends React.Component {
         super(props);
         this.state = {
             active: "↓",
-            swap: true,
+            ascending: false,
         };
         this.swap = this.swap.bind(this);
     }
 
     swap() {
         this.setState({
-            active: this.state.swap ? '↑' : '↓',
-            swap: !this.state.swap,
+            active: this.state.ascending ? '↓' : '↑',
+            ascending: !this.state.ascending,
         });
     }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search.js';
 import RatingToggle from './RatingToggle.js';
+import RoleToggle from './RoleToggle.js';
 import '../css/Header.css';
 
 export default class Header extends React.Component {
@@ -12,7 +13,7 @@ export default class Header extends React.Component {
                         <Search/>
                     </td>
                     <td className="roles-header">
-                        <h1 className="header-roles">All Roles</h1>
+                        <RoleToggle/>
                     </td>
                     <td className="rating-header">
                         <RatingToggle/>

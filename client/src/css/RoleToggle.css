@@ -1,0 +1,22 @@
+.role_contain {
+    display: flex;
+    justify-content: center;
+}
+
+.role_toggle {
+    font-size: 22px;
+    padding: 0;
+}
+
+.role, h3 {
+    font-size: 19px;
+    margin: 3px;
+}
+
+.role_toggle:hover, .role:hover {
+    cursor: pointer;
+}
+
+.role:hover {
+    color: #A69898;
+}
