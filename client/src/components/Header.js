@@ -10,13 +10,23 @@ export default class Header extends React.Component {
             <tbody>
                 <tr className="header-row">
                     <td className="name-header">
-                        <Search/>
+                        <Search 
+                        search={this.props.search}
+                        handleTextChange={this.props.handleTextChange}
+                        resetText={this.props.resetText}/>
                     </td>
                     <td className="roles-header">
-                        <RoleToggle/>
+                        <RoleToggle
+                        roles={this.props.roles}
+                        menuOpen={this.props.menuOpen}
+                        openRoleMenu={this.props.openRoleMenu}
+                        selectRole={this.props.selectRole}/>
                     </td>
                     <td className="rating-header">
-                        <RatingToggle/>
+                        <RatingToggle
+                        active={this.props.active}
+                        ascending={this.props.ascending}
+                        swapRating={this.props.swapRating}/>
                     </td>
                 </tr>
             </tbody>
