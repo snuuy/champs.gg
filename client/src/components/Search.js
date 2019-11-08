@@ -8,7 +8,7 @@ export default class Search extends React.Component {
             active: 'Search by name...',
         };
         this.handleChange = this.handleChange.bind(this);
-        this.clearField = this.clearField.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     handleChange(e) {
@@ -17,10 +17,17 @@ export default class Search extends React.Component {
         });
     }
 
-    clearField(){
-        this.setState({
-            active: '',
-        })
+    reset(){
+        if (this.state.active == 'Search by name...') {
+            this.setState({
+                active: '',
+            })
+        }
+        if (this.state.active == '') {
+            this.setState({
+                active: 'Search by name...',
+            });
+        }
     }
 
     render() {
@@ -29,7 +36,8 @@ export default class Search extends React.Component {
                 <input type="text"
                 onChange={this.handleChange}
                 value={this.state.active}
-                onFocus={this.clearField}></input>
+                onFocus={this.reset}
+                onBlur={this.reset}></input>
             </div>
         );
     }
