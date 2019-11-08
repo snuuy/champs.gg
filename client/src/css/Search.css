@@ -1,8 +1,12 @@
 input {
     height: 75px;
-    width: 325px;
+    width: 324px;
     border: 0;
     background-color: #423E3E;
     color: #D6CECE;
     font-size: 22px;
+}
+
+input:focus {
+    outline: none;
 }
