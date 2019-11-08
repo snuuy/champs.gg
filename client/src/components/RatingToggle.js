@@ -4,23 +4,16 @@ import '../css/RatingToggle.css';
 export default class RatingToggle extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            active: "↓",
-            ascending: false,
-        };
-        this.swap = this.swap.bind(this);
+        this.swapRating = this.swapRating.bind(this);
     }
 
-    swap() {
-        this.setState({
-            active: this.state.ascending ? '↓' : '↑',
-            ascending: !this.state.ascending,
-        });
+    swapRating() {
+        this.props.swapRating();
     }
 
     render() {
         return (
-            <h1 className="toggle" onClick={this.swap}>{"Rating " + this.state.active}</h1>
+            <h1 className="toggle" onClick={this.swapRating}>{"Rating " + this.props.active}</h1>
         );
     }
 }

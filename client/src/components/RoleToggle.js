@@ -4,43 +4,34 @@ import '../css/RoleToggle.css';
 export default class RoleToggle extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            role: 'All Roles',
-            menuOpen: false,
-        };
-        this.openMenu = this.openMenu.bind(this);
-        this.select = this.select.bind(this);
+        this.openRoleMenu = this.openRoleMenu.bind(this);
+        this.selectRole = this.selectRole.bind(this);
     }
 
-    openMenu() {
-        this.setState({
-            menuOpen: true,
-        });
+    openRoleMenu() {
+        this.props.openRoleMenu();
     }
 
-    select(role) {
-        this.setState({
-            role: role,
-            menuOpen: false,
-        });
+    selectRole(role) {
+        this.props.selectRole(role);
     }
 
     render() {
-        if (!this.state.menuOpen) {
+        if (!this.props.menuOpen) {
             return (
                 <h1 className="role_toggle" 
-                onClick={this.openMenu} 
-                >{this.state.role}</h1>
+                onClick={this.openRoleMenu} 
+                >{this.props.roles}</h1>
             );
         } else {
             return (
                 <div className="role_contain">
-                    <h1 className="role" onClick={() => {this.select('Top')}}>Top</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.select('Jungle')}}>Jung</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.select('Mid')}}>Mid</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.select('Bot')}}>Bot</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.select('Support')}}>Supp</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.select('All Roles')}}>All</h1>
+                    <h1 className="role" onClick={() => {this.selectRole('Top')}}>Top</h1><h3>|</h3>
+                    <h1 className="role" onClick={() => {this.selectRole('Jungle')}}>Jung</h1><h3>|</h3>
+                    <h1 className="role" onClick={() => {this.selectRole('Mid')}}>Mid</h1><h3>|</h3>
+                    <h1 className="role" onClick={() => {this.selectRole('Bot')}}>Bot</h1><h3>|</h3>
+                    <h1 className="role" onClick={() => {this.selectRole('Support')}}>Supp</h1><h3>|</h3>
+                    <h1 className="role" onClick={() => {this.selectRole('All Roles')}}>All</h1>
                 </div>
             );
         }
