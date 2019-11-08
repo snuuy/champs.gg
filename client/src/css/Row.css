@@ -14,13 +14,13 @@
     width: 250px;
     height: 75px;
     border-left: 1px solid black;
-    text-decoration: underline;
 }
 
 .champ-name {
     font-size: 22px;
     margin: 0;
     padding: 0;
+    color: #D6CECE;
 }
 
 .image-container {
