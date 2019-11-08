@@ -1,0 +1,10 @@
+.toggle {
+    background-color: #423E3E;
+    color: #D6CECE;
+    font-size: 22px;
+    border: none;
+}
+
+.toggle:hover{
+    cursor: pointer;
+}
