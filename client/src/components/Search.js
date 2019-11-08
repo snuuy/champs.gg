@@ -18,12 +18,12 @@ export default class Search extends React.Component {
     }
 
     reset(){
-        if (this.state.active == 'Search by name...') {
+        if (this.state.active === 'Search by name...') {
             this.setState({
                 active: '',
             })
         }
-        if (this.state.active == '') {
+        if (this.state.active === '') {
             this.setState({
                 active: 'Search by name...',
             });
