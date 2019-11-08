@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/Rating_Toggle.css';
+import '../css/RatingToggle.css';
 
-export default class Rating_Toggle extends React.Component {
+export default class RatingToggle extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
