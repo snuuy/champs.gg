@@ -3,8 +3,6 @@ import Header from './Header.js';
 import returnRows from '../logic/returnRows.js';
 import '../css/Table.css';
 
-let arr = returnRows();
-
 export default class Table extends React.Component {
     constructor(props) {
         super(props);
@@ -61,29 +59,7 @@ export default class Table extends React.Component {
         });
     }
 
-    ascend() {
-        let done = false;
-        if (this.state.ascending) {
-            arr[0] = arr[1];
-            return arr[1];
-        } else {
-            while (!done) {
-                done = true;
-                for (let i = 1; i < arr.length; i++) {
-                    if (arr[i - 1].props.rating < arr[i].props.rating) {
-                        done = false;
-                        let temp = arr[i - 1];
-                        arr[i - 1] = arr[i];
-                        arr[i] = temp;
-                    }
-                }
-            }
-            return arr;
-        }
-    }
-
     render() {
-        this.ascend();
         return (
             <div>
                 <div className="row">
@@ -94,7 +70,7 @@ export default class Table extends React.Component {
                     swapRating={this.swapRating}
                     />
                 </div>
-                {this.ascend()}
+                {returnRows()}
             </div>
         );
     }
