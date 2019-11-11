@@ -440,8 +440,589 @@ var champData = [
 			"Support"
 		]
 	},
+	{
+		id: "Lissandra",
+		name: "Lissandra",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Lucian",
+		name: "Lucian",
+		roles: [
+			"Bot"
+		]
+	},
+	{
+		id: "Lulu",
+		name: "Lulu",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Lux",
+		name: "Lux",
+		roles: [
+			"Mid", "Support"
+		]
+	},
+	{
+		id: "Malphite",
+		name: "Malphite",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Malzahar",
+		name: "Malzahar",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Maokai",
+		name: "Maokai",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "MasterYi",
+		name: "Master Yi",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "MissFortune",
+		name: "Miss Fortune",
+		roles: [
+			"Bot"
+		]
+	},
+	{
+		id: "Mordekaiser",
+		name: "Mordekaiser",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Morgana",
+		name: "Morgana",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Nami",
+		name: "Nami",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Nasus",
+		name: "Nasus",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Nautilus",
+		name: "Nautilus",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Neeko",
+		name: "Neeko",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Nidalee",
+		name: "Nidalee",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Nocturne",
+		name: "Nocturne",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Nunu",
+		name: "Nunu & Willump",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Olaf",
+		name: "Olaf",
+		roles: [
+			"Top", "Jungle"
+		]
+	},
+	{
+		id: "Orianna",
+		name: "Orianna",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Ornn",
+		name: "Ornn",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Pantheon",
+		name: "Pantheon",
+		roles: [
+			"Top", "Jungle", "Mid"
+		]
+	},
+	{
+		id: "Poppy",
+		name: "Poppy",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Pyke",
+		name: "Pyke",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Qiyana",
+		name: "Qiyana",
+		roles: [
+			"Top", "Jungle", "Mid"
+		]
+	},
+	{
+		id: "Quinn",
+		name: "Quinn",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Rakan",
+		name: "Rakan",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Rammus",
+		name: "Rammus",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "RekSai",
+		name: "Rek'Sai",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Renekton",
+		name: "Renekton",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Rengar",
+		name: "Rengar",
+		roles: [
+			"Top", "Jungle"
+		]
+	},
+	{
+		id: "Riven",
+		name: "Riven",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Rumble",
+		name: "Rumble",
+		roles: [
+			"Top", "Mid"
+		]
+	},
+	{
+		id: "Ryze",
+		name: "Ryze",
+		roles: [
+			"Top", "Mid"
+		]
+	},
+	{
+		id: "Sejuani",
+		name: "Sejuani",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Senna",
+		name: "Senna",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Shaco",
+		name: "Shaco",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Shen",
+		name: "Shen",
+		roles: [
+			"Top", "Support"
+		]
+	},
+	{
+		id: "Shyvana",
+		name: "Shyvana",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Singed",
+		name: "Singed",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Sion",
+		name: "Sion",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Sivir",
+		name: "Sivir",
+		roles: [
+			"Bot"
+		]
+	},
+	{
+		id: "Skarner",
+		name: "Skarner",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Sona",
+		name: "Sona",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Soraka",
+		name: "Soraka",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Swain",
+		name: "Swain",
+		roles: [
+			"Top", "Mid"
+		]
+	},
+	{
+		id: "Sylas",
+		name: "Sylas",
+		roles: [
+			"Top", "Jungle", "Mid"
+		]
+	},
+	{
+		id: "Syndra",
+		name: "Syndra",
+		roles: [
+			"Mid", "Bot"
+		]
+	},
+	{
+		id: "TahmKench",
+		name: "Tahm Kench",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Taliyah",
+		name: "Taliyah",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Talon",
+		name: "Talon",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Taric",
+		name: "Taric",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Teemo",
+		name: "Teemo",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Thresh",
+		name: "Thresh",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Tristana",
+		name: "Tristana",
+		roles: [
+			"Mid", "Bot"
+		]
+	},
+	{
+		id: "Trundle",
+		name: "Trundle",
+		roles: [
+			"Top", "Jungle"
+		]
+	},
+	{
+		id: "Tryndamere",
+		name: "Tryndamere",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "TwistedFate",
+		name: "Twisted Fate",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Twitch",
+		name: "Twitch",
+		roles: [
+			"Jungle", "Bot"
+		]
+	},
+	{
+		id: "Udyr",
+		name: "Udyr",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Urgot",
+		name: "Urgot",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Varus",
+		name: "Varus",
+		roles: [
+			"Bot"
+		]
+	},
+	{
+		id: "Vayne",
+		name: "Vayne",
+		roles: [
+			"Bot"
+		]
+	},
+	{
+		id: "Veigar",
+		name: "Veigar",
+		roles: [
+			"Mid", "Bot"
+		]
+	},
+	{
+		id: "Velkoz",
+		name: "Vel'Koz",
+		roles: [
+			"Mid", "Support"
+		]
+	},
+	{
+		id: "Vi",
+		name: "Vi",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Viktor",
+		name: "Viktor",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Vladimir",
+		name: "Vladimir",
+		roles: [
+			"Top", "Mid"
+		]
+	},
+	{
+		id: "Volibear",
+		name: "Volibear",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Warwick",
+		name: "Warwick",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "MonkeyKing",
+		name: "Wukong",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Xayah",
+		name: "Xayah",
+		roles: [
+			"Bot"
+		]
+	},
+	{
+		id: "Xerath",
+		name: "Xerath",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "XinZhao",
+		name: "Xin Zhao",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Yasuo",
+		name: "Yasuo",
+		roles: [
+			"Top", "Mid", "Bot"
+		]
+	},
+	{
+		id: "Yorick",
+		name: "Yorick",
+		roles: [
+			"Top"
+		]
+	},
+	{
+		id: "Yuumi",
+		name: "Yuumi",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Zac",
+		name: "Zac",
+		roles: [
+			"Jungle"
+		]
+	},
+	{
+		id: "Zed",
+		name: "Zed",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Ziggs",
+		name: "Ziggs",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Zilean",
+		name: "Zilean",
+		roles: [
+			"Support"
+		]
+	},
+	{
+		id: "Zoe",
+		name: "Zoe",
+		roles: [
+			"Mid"
+		]
+	},
+	{
+		id: "Zyra",
+		name: "Zyra",
+		roles: [
+			"Support"
+		]
+	},
 ];
 
-champData.forEach((champion, index, champData) => champData[index].rating = Math.random() * 5);
+champData.forEach((champion, index, champData) => champData[index].rating = (Math.random() * 4) + 1);
 
 module.exports = champData;
