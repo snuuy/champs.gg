@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from './Header.js';
-import Row from './Row.js';
+import returnRows from '../logic/returnRows.js';
 import '../css/Table.css';
+
+let arr = returnRows();
 
 export default class Table extends React.Component {
     constructor(props) {
@@ -59,7 +61,29 @@ export default class Table extends React.Component {
         });
     }
 
+    ascend() {
+        let done = false;
+        if (this.state.ascending) {
+            arr[0] = arr[1];
+            return arr[1];
+        } else {
+            while (!done) {
+                done = true;
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i - 1].props.rating < arr[i].props.rating) {
+                        done = false;
+                        let temp = arr[i - 1];
+                        arr[i - 1] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+    }
+
     render() {
+        this.ascend();
         return (
             <div>
                 <div className="row">
@@ -70,41 +94,7 @@ export default class Table extends React.Component {
                     swapRating={this.swapRating}
                     />
                 </div>
-                <div className="row">
-                    <Row
-                    name="Ahri"
-                    icon="https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/Ahri.png"
-                    roles="Mid"
-                    rating="4.73"/>
-                </div>
-                <div className="row">
-                    <Row
-                    name="Qiyana"
-                    icon="https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/Qiyana.png"
-                    roles="Top, Mid, Jungle"
-                    rating="4.03"/>
-                </div>
-                <div className="row">
-                    <Row
-                    name="Lucian"
-                    icon="https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/Lucian.png"
-                    roles="Bot"
-                    rating="3.98"/>
-                </div>
-                <div className="row">
-                    <Row
-                    name="Soraka"
-                    icon="https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/Soraka.png"
-                    roles="Support"
-                    rating="2.58"/>
-                </div>
-                <div className="row">
-                    <Row
-                    name="Heimerdinger"
-                    icon="https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/Heimerdinger.png"
-                    roles="Top, Mid, Bot"
-                    rating="1.30"/>
-                </div>
+                {this.ascend()}
             </div>
         );
     }
