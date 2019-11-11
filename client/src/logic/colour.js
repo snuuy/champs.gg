@@ -1,3 +1,3 @@
 export default function colour(rating) {
-    return "hsl(" + rating / 5 * 120 + ", 45%, 50%)";
+    return "hsl(" + rating / 5 * 120 + ", 80%, 20%)";
 }

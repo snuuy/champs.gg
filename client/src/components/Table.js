@@ -10,10 +10,10 @@ export default class Table extends React.Component {
         this.state = {
             search: 'Search by name...',
             roles: 'All Roles',
-            ascending: true,
+            ascending: false,
             menuOpen: false,
-            active: '↑',
-            champions: champData
+            active: '↓',
+            champions: champData.sort((a, b) => b.rating - a.rating)
         };
         this.handleTextChange = this.handleTextChange.bind(this);
         this.resetText = this.resetText.bind(this);
@@ -83,7 +83,9 @@ export default class Table extends React.Component {
                     swapRating={this.swapRating}
                     />
                 </div>
-                { this.state.champions.map(champion => <Row key={champion.id} name={champion.name} icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"} roles={champion.roles.join(', ')} rating={champion.rating.toFixed(2)} />) }
+                { this.state.champions.map(champion => <Row key={champion.id} name={champion.name} 
+                icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"}
+                 roles={champion.roles.join(', ')} rating={champion.rating.toFixed(2)} />) }
             </div>
         );
     }
