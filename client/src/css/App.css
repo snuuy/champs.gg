@@ -1,4 +1,14 @@
+#logo {
+    font-size: 46px;
+    margin: 10px;
+    color: #2571B3;
+}
+
 .app-table {
     width: 775px;
     margin: 0 auto;
+}
+
+.riot {
+    font-size: 12px;
 }
