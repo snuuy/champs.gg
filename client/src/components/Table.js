@@ -59,12 +59,15 @@ export default class Table extends React.Component {
         this.setState({
             active: this.state.ascending ? '↓' : '↑',
             ascending: !this.state.ascending,
-            champions: this.sortChampions(this.state.champions.slice()),
+        }, () => {
+            this.setState({
+                champions: this.sortChampions(this.state.champions.slice()),
+            });
         });
     }
 
     sortChampions(champions) {
-        if (!this.state.ascending) {
+        if (this.state.ascending) {
             champions.sort((a, b) => a.rating - b.rating);
         } else {
             champions.sort((a, b) => b.rating - a.rating);
