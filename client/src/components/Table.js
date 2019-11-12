@@ -21,6 +21,7 @@ export default class Table extends React.Component {
         this.selectRole = this.selectRole.bind(this);
         this.swapRating = this.swapRating.bind(this);
         this.sortChampions = this.sortChampions.bind(this);
+        this.filterRole = this.filterRole.bind(this);
     }
 
     handleTextChange(value) {
@@ -52,6 +53,10 @@ export default class Table extends React.Component {
         this.setState({
             roles: role,
             menuOpen: false,
+        }, () => {
+            this.setState({
+                champions: this.filterRole(),
+            })
         });
     }
 
@@ -64,6 +69,21 @@ export default class Table extends React.Component {
                 champions: this.sortChampions(this.state.champions.slice()),
             });
         });
+    }
+
+    filterRole() {
+        if (this.state.roles === 'Top') {
+            return this.sortChampions(champData).filter(champion => champion.roles.includes('Top'));
+        } else if (this.state.roles === 'Jungle') {
+            return this.sortChampions(champData).filter(champion => champion.roles.includes('Jungle'));
+        } else if (this.state.roles === 'Mid') {
+            return this.sortChampions(champData).filter(champion => champion.roles.includes('Mid'));
+        } else if (this.state.roles === 'Bot') {
+            return this.sortChampions(champData).filter(champion => champion.roles.includes('Bot'));
+        } else if (this.state.roles === 'Support') {
+            return this.sortChampions(champData).filter(champion => champion.roles.includes('Support'));
+        }
+        return this.sortChampions(champData);
     }
 
     sortChampions(champions) {
