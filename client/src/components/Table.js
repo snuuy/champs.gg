@@ -75,7 +75,7 @@ export default class Table extends React.Component {
     }
 
     sortChampions(champions) {
-        if (this.state.search != '' && this.state.search != 'Search by name...') {
+        if (this.state.search !== '' && this.state.search !== 'Search by name...') {
             champions = champions.filter(champ => champ.name.toUpperCase().includes(this.state.search.toUpperCase()));
         }
         if (this.state.roles === 'Top') {
