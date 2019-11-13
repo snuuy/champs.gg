@@ -1,4 +1,4 @@
-.active, .inactive{
+.active, .inactive {
     font-size: 26px;
     text-align: center;
     color: #2571B3;
@@ -14,4 +14,8 @@
 
 .inactive {
     background-color: #95E8AF;
+}
+
+.active:focus, .inactive:focus {
+    outline: none;
 }
