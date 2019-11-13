@@ -1,22 +1,15 @@
 import React from 'react';
 import MatchupHeader from './MatchupHeader.js';
 import MatchupRow from './MatchupRow.js';
-import champData from '../data/champData.js';
 import '../css/Table.css';
 
 export default class Table extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            search: 'Search by name...',
-            roles: this.props.roles,
-            ascending: false,
-            active: '↓',
-            champions: champData.slice().sort((a, b) => b.rating - a.rating)
-        };
         this.handleTextChange = this.handleTextChange.bind(this);
         this.resetText = this.resetText.bind(this);
         this.swapRating = this.swapRating.bind(this);
+        this.sortChampions = this.sortChampions.bind(this);
     }
 
     handleTextChange(value) {
@@ -24,7 +17,7 @@ export default class Table extends React.Component {
             search: value,
         }, () => {
             this.setState({
-                champions: this.sortChampions(champData.slice()),
+                champions: this.sortChampions(this.props.championList.slice()),
             })
         });
     }
@@ -48,23 +41,12 @@ export default class Table extends React.Component {
             ascending: !this.state.ascending,
         }, () => {
             this.setState({
-                champions: this.sortChampions(champData.slice()),
+                champions: this.sortChampions(this.props.championList.slice()),
             });
         });
     }
 
     sortChampions(champions) {
-        if (this.state.roles === 'Top') {
-            champions = champions.filter(champ => champ.roles.includes('Top'));
-        } else if (this.state.roles === 'Jungle') {
-            champions = champions.filter(champ => champ.roles.includes('Jungle'));
-        } else if (this.state.roles === 'Mid') {
-            champions = champions.filter(champ => champ.roles.includes('Mid'));
-        } else if (this.state.roles === 'Bot') {
-            champions = champions.filter(champ => champ.roles.includes('Bot'));
-        } else if (this.state.roles === 'Support') {
-            champions = champions.filter(champ => champ.roles.includes('Support'));
-        }
         if (this.state.search !== '' && this.state.search !== 'Search by name...') {
             champions = champions.filter(champ => champ.name.toUpperCase().includes(this.state.search.toUpperCase()));
         }
@@ -81,11 +63,11 @@ export default class Table extends React.Component {
             <div>
                 <div className="matchup">
                     <MatchupHeader
-                    search={this.state.search} ascending={this.state.ascending} 
-                    active={this.state.active} handleTextChange={this.handleTextChange}
-                    resetText={this.resetText} swapRating={this.swapRating}/>
+                    search={this.props.search} ascending={this.props.ascending} 
+                    active={this.props.active} handleTextChange={this.props.handleTextChange}
+                    resetText={this.props.resetText} swapRating={this.props.swapRating}/>
                 </div>
-                { this.state.champions.map(champion => <MatchupRow key={champion.id} name={champion.name} 
+                { this.props.championList.map(champion => <MatchupRow key={champion.id} name={champion.name} 
                 icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"}
                 rating={champion.rating.toFixed(2)} />) }
             </div>
