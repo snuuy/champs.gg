@@ -11,18 +11,31 @@
 }
 
 .champion-container {
+    display: inline-block;
     width: 320px;
+    height: 150px;
     margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .champion-container img {
     float: left;
     width: 150px;
-    margin-bottom: 20px;
+}
+
+.rating-area {
+    display: flex;
+    flex-direction: column;
 }
 
 .champion-rating-1 {
     float: right;
     font-size: 27px;
-    color: #2571B3;
+    color: #D6CECE;
+    margin: 0;
+    margin-top: 23%;
+}
+
+.button-container {
+    margin: 0;
 }

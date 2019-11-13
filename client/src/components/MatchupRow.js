@@ -30,11 +30,11 @@ export default class MatchupRow extends React.Component {
                     <td className="rating-container">
                         <h1 className="champ-rating">{this.state.rating}</h1>
                         <div className="button-container">
-                            <Button value="S"/>
-                            <Button value="A"/>
-                            <Button value="B"/>
-                            <Button value="C"/>
-                            <Button value="D"/>
+                            <Button value="5"/>
+                            <Button value="4"/>
+                            <Button value="3"/>
+                            <Button value="2"/>
+                            <Button value="1"/>
                         </div>
                     </td>
                 </tr>
