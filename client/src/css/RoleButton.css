@@ -1,10 +1,17 @@
-.role-button-1 {
+.active, .inactive{
     font-size: 26px;
     text-align: center;
     color: #2571B3;
-    background-color: #90d1a4;
     border-radius: 0%;
     border: 2px solid black;
     width: 150px;
     margin-bottom: 30px;
+}
+
+.active {
+    background-color: #5DA674;
+}
+
+.inactive {
+    background-color: #95E8AF;
 }

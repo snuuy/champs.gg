@@ -4,18 +4,19 @@ import MatchupTable from './components/MatchupTable.js';
 import champData from './data/champData.js';
 import './css/App.css';
 
+//PLACEHOLDER UNTIL DATA FEEDING
 let placeholderChampion = champData[87];
-let placeholderRole = champData[87].roles[0];
+let initialRole = placeholderChampion.roles[0];
 
 export default class ChampApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             champion: placeholderChampion,
-            role: placeholderRole,
+            role: placeholderChampion.roles[0],
             championList: champData.slice().filter(champ =>
-                champ.roles.includes(placeholderRole) && champ.id !== placeholderChampion.id).
-                sort((a, b) => b.rating - a.rating),
+                champ.roles.includes(initialRole) && champ.id !== placeholderChampion.id)
+                .sort((a, b) => b.rating - a.rating),
             search: 'Search by name...',
             ascending: false,
             active: '↓',
@@ -26,15 +27,15 @@ export default class ChampApp extends React.Component {
         this.swapRating = this.swapRating.bind(this);
         this.sortChampions = this.sortChampions.bind(this);
         }
-
+    
     changeRole(role) {
         this.setState({
             role: role,
         }, () => {
             this.setState({
                 championList: champData.slice().filter(champ =>
-                    champ.roles.includes(this.state.role) && champ.id !== placeholderChampion.id).
-                    sort((a, b) => b.rating - a.rating)
+                    champ.roles.includes(this.state.role) && champ.id !== placeholderChampion.id)
+                    .sort((a, b) => b.rating - a.rating)
             });
         })
     }
@@ -92,7 +93,8 @@ export default class ChampApp extends React.Component {
             <div>
                 <div className="champ-info-container">
                     <ChampInfo name={this.state.champion.name} rating={this.state.champion.rating.toFixed(2)} 
-                    id={this.state.champion.id} roles={this.state.champion.roles} changeRole={this.changeRole}/>
+                    id={this.state.champion.id} roles={this.state.champion.roles} changeRole={this.changeRole}
+                    activeRole={this.state.role}/>
                 </div>
                 <div className="matchup-table">
                     <MatchupTable championList={this.state.championList} search={this.state.search} 
