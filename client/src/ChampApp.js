@@ -14,7 +14,8 @@ export default class ChampApp extends React.Component {
             champion: placeholderChampion,
             role: placeholderRole,
             championList: champData.slice().filter(champ =>
-                champ.roles.includes(placeholderRole)).sort((a, b) => b.rating - a.rating),
+                champ.roles.includes(placeholderRole) && champ.id !== placeholderChampion.id).
+                sort((a, b) => b.rating - a.rating),
             search: 'Search by name...',
             ascending: false,
             active: '↓',
@@ -32,7 +33,8 @@ export default class ChampApp extends React.Component {
         }, () => {
             this.setState({
                 championList: champData.slice().filter(champ =>
-                    champ.roles.includes(this.state.role)).sort((a, b) => b.rating - a.rating)
+                    champ.roles.includes(this.state.role) && champ.id !== placeholderChampion.id).
+                    sort((a, b) => b.rating - a.rating)
             });
         })
     }
@@ -43,7 +45,7 @@ export default class ChampApp extends React.Component {
         }, () => {
             this.setState({
                 championList: this.sortChampions(champData.slice().filter(champ =>
-                champ.roles.includes(this.state.role))),
+                champ.roles.includes(this.state.role) && champ.id !== placeholderChampion.id)),
             })
         });
     }
@@ -68,7 +70,7 @@ export default class ChampApp extends React.Component {
         }, () => {
             this.setState({
                 championList: this.sortChampions(champData.slice().filter(champ =>
-                    champ.roles.includes(this.state.role))),
+                    champ.roles.includes(this.state.role) && champ.id !== placeholderChampion.id)),
             });
         });
     }
