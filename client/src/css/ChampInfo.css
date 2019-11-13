@@ -1,0 +1,27 @@
+.champ-name-1 {
+    font-size: 60px;
+    color: #2571B3;
+    margin: 0;
+}
+
+.role-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.champion-container {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.champion-container img {
+    float: left;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.champion-rating-1 {
+    float: right;
+    font-size: 27px;
+    color: #2571B3;
+}
