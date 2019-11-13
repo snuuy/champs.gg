@@ -9,6 +9,7 @@ export default class Table extends React.Component {
         super(props);
         this.state = {
             search: 'Search by name...',
+            roles: this.props.roles,
             ascending: false,
             active: '↓',
             champions: champData.slice().sort((a, b) => b.rating - a.rating)
@@ -53,6 +54,17 @@ export default class Table extends React.Component {
     }
 
     sortChampions(champions) {
+        if (this.state.roles === 'Top') {
+            champions = champions.filter(champ => champ.roles.includes('Top'));
+        } else if (this.state.roles === 'Jungle') {
+            champions = champions.filter(champ => champ.roles.includes('Jungle'));
+        } else if (this.state.roles === 'Mid') {
+            champions = champions.filter(champ => champ.roles.includes('Mid'));
+        } else if (this.state.roles === 'Bot') {
+            champions = champions.filter(champ => champ.roles.includes('Bot'));
+        } else if (this.state.roles === 'Support') {
+            champions = champions.filter(champ => champ.roles.includes('Support'));
+        }
         if (this.state.search !== '' && this.state.search !== 'Search by name...') {
             champions = champions.filter(champ => champ.name.toUpperCase().includes(this.state.search.toUpperCase()));
         }
