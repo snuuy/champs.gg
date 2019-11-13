@@ -1,15 +1,14 @@
 import React from 'react';
-import Button from './Button.js';
 import colour from '../logic/colour.js';
-import '../css/Row.css';
+import Button from './Button.js';
+import '../css/MatchupRow.css'
 
-export default class Row extends React.Component {
+export default class MatchupRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             name: this.props.name,
             icon: this.props.icon,
-            roles: this.props.roles,
             rating: this.props.rating,
         };
     }
@@ -28,9 +27,6 @@ export default class Row extends React.Component {
                     <td className="image-container">
                         <img className="champ-icon" src={this.state.icon} alt={this.state.name}/>
                     </td>
-                    <td className="roles-container">
-                        <h1 className="champ-roles">{this.state.roles}</h1>
-                    </td>
                     <td className="rating-container">
                         <h1 className="champ-rating">{this.state.rating}</h1>
                         <div className="button-container">
@@ -45,4 +41,5 @@ export default class Row extends React.Component {
             </tbody>
         );
     }
+
 }

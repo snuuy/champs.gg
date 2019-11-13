@@ -9,6 +9,11 @@
     margin: 0 auto;
 }
 
+.matchup-table {
+    width: 475px;
+    margin: 0 auto;
+}
+
 .riot {
     font-size: 12px;
 }
