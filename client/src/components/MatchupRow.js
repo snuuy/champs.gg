@@ -4,15 +4,6 @@ import Button from './Button.js';
 import '../css/MatchupRow.css'
 
 export default class MatchupRow extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: this.props.name,
-            icon: this.props.icon,
-            rating: this.props.rating,
-        };
-    }
-
     rowStyles = {
         backgroundColor: colour(this.props.rating),
     }
@@ -22,13 +13,13 @@ export default class MatchupRow extends React.Component {
             <tbody>
                 <tr className="champ-row" style={this.rowStyles}>
                     <td className="name-container">
-                        <a href="#root" className="champ-name">{this.state.name}</a>
+                        <a href="#root" className="champ-name">{this.props.name}</a>
                     </td>
                     <td className="image-container">
-                        <img className="champ-icon" src={this.state.icon} alt={this.state.name}/>
+                        <img className="champ-icon" src={this.props.icon} alt={this.props.name}/>
                     </td>
                     <td className="rating-container">
-                        <h1 className="champ-rating">{this.state.rating}</h1>
+                        <h1 className="champ-rating">{this.props.rating}</h1>
                         <div className="button-container">
                             <Button value="5"/>
                             <Button value="4"/>
