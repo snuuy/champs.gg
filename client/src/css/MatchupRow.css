@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    font-family: "Source Sans Pro";
+    text-align: center;
+    font-weight: 100;
+}
+
+.champ-row {
+    outline: 1px solid black;
+    color: #D6CECE;
+}
+
+.name-container {
+    width: 250px;
+    height: 75px;
+    border-left: 1px solid black;
+}
+
+.champ-name {
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    color: #D6CECE;
+}
+
+.image-container {
+    width: 75px;
+    border-left: 2px solid black;
+}
+
+.champ-icon {
+    height: 50px;
+    font: 10px "Source Sans Pro";
+}
+
+.champ-icon:hover {
+    box-shadow: 0px 3px 8px black;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.rating-container {
+    width: 150px;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+}
+
+.champ-rating {
+    font-size: 28px;
+    margin: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}

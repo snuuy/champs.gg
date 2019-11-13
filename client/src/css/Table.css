@@ -2,6 +2,10 @@
     width: 775px;
 }
 
+.matchup {
+    width: 475px;
+}
+
 .row:first-child {
     border-top: 2px solid black;
 }
