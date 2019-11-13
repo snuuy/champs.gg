@@ -14,8 +14,8 @@ export default class RoleButton extends React.Component {
     render() {
         return (
             <div>
-                <button className="role-button-1" 
-                onClick={ () => {this.changeDisplayedRole(this.props.role)}}>
+                <button className={this.props.activeRole === this.props.role ? "active" : "inactive"}
+                style={this.props.styles} onClick={ () => {this.changeDisplayedRole(this.props.role)}}>
                 {this.props.role}</button>
             </div>
         );
