@@ -26,7 +26,7 @@ export default class MatchupRow extends React.Component {
                             <Button value="3"/>
                             <Button value="2"/>
                             <Button value="1"/>
-                        </div>
+                        </div>  
                     </td>
                 </tr>
             </tbody>

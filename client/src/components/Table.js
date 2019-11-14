@@ -78,16 +78,23 @@ export default class Table extends React.Component {
         if (this.state.search !== '' && this.state.search !== 'Search by name...') {
             champions = champions.filter(champ => champ.name.toUpperCase().includes(this.state.search.toUpperCase()));
         }
-        if (this.state.roles === 'Top') {
-            champions = champions.filter(champ => champ.roles.includes('Top'));
-        } else if (this.state.roles === 'Jungle') {
-            champions = champions.filter(champ => champ.roles.includes('Jungle'));
-        } else if (this.state.roles === 'Mid') {
-            champions = champions.filter(champ => champ.roles.includes('Mid'));
-        } else if (this.state.roles === 'Bot') {
-            champions = champions.filter(champ => champ.roles.includes('Bot'));
-        } else if (this.state.roles === 'Support') {
-            champions = champions.filter(champ => champ.roles.includes('Support'));
+        switch(this.state.roles) {
+            case 'Top':
+                champions = champions.filter(champ => champ.roles.includes('Top'));
+                break;
+            case 'Jungle':
+                champions = champions.filter(champ => champ.roles.includes('Jungle'));
+                break;
+            case 'Mid':
+                champions = champions.filter(champ => champ.roles.includes('Mid'));
+                break;
+            case 'Bot':
+                champions = champions.filter(champ => champ.roles.includes('Bot'));
+                break;
+            case 'Support':
+                champions = champions.filter(champ => champ.roles.includes('Support'));
+                break;
+            default:
         }
         if (this.state.ascending) {
             champions.sort((a, b) => a.rating - b.rating);
