@@ -4,8 +4,10 @@ import MatchupTable from './components/MatchupTable.js';
 import champData from './data/champData.js';
 import './css/App.css';
 
-//PLACEHOLDER UNTIL DATA FEEDING
+/* ----------------------------------------------------------------------*/
+//PLACEHOLDER UNTIL BACKEND READY
 let placeholderChampion = champData[87];
+/* ----------------------------------------------------------------------*/
 let initialRole = placeholderChampion.roles[0];
 
 export default class ChampApp extends React.Component {
