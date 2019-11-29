@@ -21,6 +21,9 @@ export default class MatchupHeader extends React.Component {
                         swapRating={this.props.swapRating}
                         text={this.props.text}/>
                     </td>
+                    <td className="comment-header">
+                        <h5>Comments</h5>
+                    </td>
                 </tr>
             </tbody>
         );

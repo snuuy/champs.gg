@@ -28,6 +28,9 @@ export default class MatchupRow extends React.Component {
                             <Button value="1"/>
                         </div>  
                     </td>
+                    <td className="comments-container">
+                        <h1 className="comments">{this.props.comment}</h1>
+                    </td>
                 </tr>
             </tbody>
         );
