@@ -20,13 +20,6 @@ export default class MatchupRow extends React.Component {
                     </td>
                     <td className="rating-container">
                         <h1 className="champ-rating">{this.props.rating}</h1>
-                        <div className="button-container">
-                            <Button value="5"/>
-                            <Button value="4"/>
-                            <Button value="3"/>
-                            <Button value="2"/>
-                            <Button value="1"/>
-                        </div>  
                     </td>
                     <td className="comments-container">
                         <h1 className="comments">{this.props.comment}</h1>
