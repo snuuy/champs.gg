@@ -15,7 +15,7 @@ export default class Row extends React.Component {
     }
 
     rowStyles = {
-        backgroundColor: colour(this.props.rating),
+        backgroundColor: colour(this.props.rating, this.props.page),
     }
 
     render() {

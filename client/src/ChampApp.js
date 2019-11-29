@@ -96,13 +96,13 @@ export default class ChampApp extends React.Component {
                 <div className="champ-info-container">
                     <ChampInfo name={this.state.champion.name} rating={this.state.champion.rating.toFixed(2)} 
                     id={this.state.champion.id} roles={this.state.champion.roles} changeRole={this.changeRole}
-                    activeRole={this.state.role}/>
+                    activeRole={this.state.role} page="champ"/>
                 </div>
                 <div className="matchup-table">
                     <MatchupTable championList={this.state.championList} search={this.state.search} 
                     ascending={this.state.ascending} active={this.state.active} 
                     handleTextChange={this.handleTextChange} resetText={this.resetText} 
-                    swapRating={this.swapRating}/>
+                    swapRating={this.swapRating} text="Difficulty " page="champ"/>
                 </div>
                 <p className="riot">
                     champs.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games

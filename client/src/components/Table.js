@@ -112,12 +112,12 @@ export default class Table extends React.Component {
                     search={this.state.search} roles={this.state.roles} ascending={this.state.ascending}
                     menuOpen={this.state.menuOpen} active={this.state.active} handleTextChange={this.handleTextChange}
                     resetText={this.resetText} openRoleMenu={this.openRoleMenu} selectRole={this.selectRole}
-                    swapRating={this.swapRating}
+                    swapRating={this.swapRating} page="main"
                     />
                 </div>
                 { this.state.champions.map(champion => <Row key={champion.id} name={champion.name} 
                 icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"}
-                roles={champion.roles.join(', ')} rating={champion.rating.toFixed(2)} />) }
+                roles={champion.roles.join(', ')} rating={champion.rating.toFixed(2)} page="main"/>) }
             </div>
         );
     }

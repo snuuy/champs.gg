@@ -6,7 +6,7 @@ import '../css/ChampInfo.css';
 
 export default class ChampInfo extends React.Component {
     styles = {
-        backgroundColor: colour(this.props.rating),
+        backgroundColor: colour(this.props.rating, this.props.page),
     }
     
     render() {
