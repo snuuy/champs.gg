@@ -5,7 +5,7 @@ import '../css/MatchupRow.css'
 
 export default class MatchupRow extends React.Component {
     rowStyles = {
-        backgroundColor: colour(this.props.rating),
+        backgroundColor: colour(this.props.rating, this.props.page),
     }
 
     render() {

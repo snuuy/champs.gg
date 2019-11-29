@@ -11,11 +11,12 @@ export default class MatchupTable extends React.Component {
                     <MatchupHeader
                     search={this.props.search} ascending={this.props.ascending} 
                     active={this.props.active} handleTextChange={this.props.handleTextChange}
-                    resetText={this.props.resetText} swapRating={this.props.swapRating}/>
+                    resetText={this.props.resetText} swapRating={this.props.swapRating}
+                    text={this.props.text}/>
                 </div>
                 { this.props.championList.map(champion => <MatchupRow key={champion.id} name={champion.name} 
                 icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"}
-                rating={champion.rating.toFixed(2)} />) }
+                rating={champion.rating.toFixed(2)} page={this.props.page} />) } 
             </div>
         );
     }

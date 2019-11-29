@@ -689,7 +689,7 @@ var champData = [
 		id: "Senna",
 		name: "Senna",
 		roles: [
-			"Support"
+			"Bot", "Support"
 		]
 	},
 	{
@@ -1023,6 +1023,6 @@ var champData = [
 	},
 ];
 
-champData.forEach((champion, index, champData) => champData[index].rating = (Math.random() * 4) + 1);
+champData.forEach((champion, index, champData) => champData[index].rating = (Math.random() * 9) + 1);
 
 module.exports = champData;

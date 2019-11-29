@@ -13,7 +13,7 @@ export default class RatingToggle extends React.Component {
 
     render() {
         return (
-            <h1 className="toggle" onClick={this.swapRating}>{"Rating " + this.props.active}</h1>
+            <h1 className="toggle" onClick={this.swapRating}>{this.props.text + this.props.active}</h1>
         );
     }
 }

@@ -18,7 +18,8 @@ export default class MatchupHeader extends React.Component {
                         <RatingToggle
                         active={this.props.active}
                         ascending={this.props.ascending}
-                        swapRating={this.props.swapRating}/>
+                        swapRating={this.props.swapRating}
+                        text={this.props.text}/>
                     </td>
                 </tr>
             </tbody>

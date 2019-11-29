@@ -26,7 +26,8 @@ export default class Header extends React.Component {
                         <RatingToggle
                         active={this.props.active}
                         ascending={this.props.ascending}
-                        swapRating={this.props.swapRating}/>
+                        swapRating={this.props.swapRating}
+                        text="Rating "/>
                     </td>
                 </tr>
             </tbody>
