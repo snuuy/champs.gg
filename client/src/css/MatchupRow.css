@@ -54,3 +54,12 @@
     display: flex;
     justify-content: center;
 }
+
+.comments-container {
+    width: 300px;
+    border-left: 1px solid black;
+}
+
+.comments {
+    font-size: 12px;
+}

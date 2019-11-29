@@ -16,7 +16,7 @@ export default class MatchupTable extends React.Component {
                 </div>
                 { this.props.championList.map(champion => <MatchupRow key={champion.id} name={champion.name} 
                 icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"}
-                rating={champion.rating.toFixed(2)} page={this.props.page} />) } 
+                rating={champion.rating.toFixed(2)} page={this.props.page} comment="Treat this matchup carefully. You have to dodge e in lane or you lose trades. After level 6, you can start looking for ganks. Rush rod of ages."/>) } 
             </div>
         );
     }

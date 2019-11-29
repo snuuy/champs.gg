@@ -2,8 +2,13 @@
     font-size: 22px;
 }
 
-.name-header, .image-header, .roles-header, .rating-header {
+.name-header, .image-header, .roles-header, .rating-header, .comment-header {
     text-align: center;
+}
+
+h5 {
+    font-size: 22px;
+    margin: 0;
 }
 
 .header-row {
@@ -25,5 +30,11 @@
 .rating-header {
     width: 150px;
     border-left: 2px solid black;
+    border-right: 1px solid black;
+}
+
+.comment-header {
+    width: 300px;
+    border-left: 1px solid black;
     border-right: 1px solid black;
 }
