@@ -15,7 +15,7 @@
     display: inline-block;
     width: 32%;
     height: 150px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 h3 {
@@ -31,7 +31,8 @@ h3 {
 }
 
 .player-name {
-    margin: 0;
+    margin-bottom: 3px;
+    margin-top: 0;
 }
 
 .player-bio {
@@ -65,5 +66,10 @@ h3 {
 
 .information {
     font-style: italic;
+    font-size: 12px;
+}
+
+.plug {
+    margin-bottom: 10px;
     font-size: 12px;
 }
