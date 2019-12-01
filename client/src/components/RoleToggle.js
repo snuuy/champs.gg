@@ -26,11 +26,11 @@ export default class RoleToggle extends React.Component {
         } else {
             return (
                 <div className="role_contain">
-                    <h1 className="role" onClick={() => {this.selectRole('Top')}}>Top</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.selectRole('Jungle')}}>Jung</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.selectRole('Mid')}}>Mid</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.selectRole('Bot')}}>Bot</h1><h3>|</h3>
-                    <h1 className="role" onClick={() => {this.selectRole('Support')}}>Supp</h1><h3>|</h3>
+                    <h1 className="role" onClick={() => {this.selectRole('Top')}}>Top</h1><h1 class="line">|</h1>
+                    <h1 className="role" onClick={() => {this.selectRole('Jungle')}}>Jung</h1><h1 class="line">|</h1>
+                    <h1 className="role" onClick={() => {this.selectRole('Mid')}}>Mid</h1><h1 class="line">|</h1>
+                    <h1 className="role" onClick={() => {this.selectRole('Bot')}}>Bot</h1><h1 class="line">|</h1>
+                    <h1 className="role" onClick={() => {this.selectRole('Support')}}>Supp</h1><h1 class="line">|</h1>
                     <h1 className="role" onClick={() => {this.selectRole('All Roles')}}>All</h1>
                 </div>
             );
