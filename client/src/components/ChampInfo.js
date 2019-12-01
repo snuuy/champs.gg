@@ -23,6 +23,9 @@ export default class ChampInfo extends React.Component {
                         <a href={this.props.youtube} target="_blank"><img className="social-icon" id="youtube" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/YouTube_play_buttom_icon_%282013-2017%29.svg/1280px-YouTube_play_buttom_icon_%282013-2017%29.svg.png"/></a>
                     </div>
                 </div>
+                <div className="plug-container">
+                    <h2 className="plug">{this.props.plug}</h2>
+                </div>
                 <div className="role-button-container">
                     {this.props.roles.map(role => <RoleButton role={role} changeRole={this.props.changeRole}
                     activeRole={this.props.activeRole}/>)}

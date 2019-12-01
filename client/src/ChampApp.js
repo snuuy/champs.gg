@@ -99,7 +99,8 @@ export default class ChampApp extends React.Component {
                     activeRole={this.state.role} playerName="WildTurtle" id={this.state.champion.id}
                     playerPicture="https://static-cdn.jtvnw.net/jtv_user_pictures/wildturtle-profile_image-c68219384e832612-300x300.png"
                     twitter="wildturtle" opgg="https://na.op.gg/summoner/userName=wildturtle" twitch="wildturtle"
-                    youtube="https://www.youtube.com/channel/UCy0omD6TIJklBme14VQqV6A" description="WildTurtle is the bot laner for LCS team FlyQuest, and has over 5 years of professional experience in the ADC role. He has held 3 accounts in top 15 challenger simultaneously."/>
+                    youtube="https://www.youtube.com/channel/UCy0omD6TIJklBme14VQqV6A" description="WildTurtle is the bot laner for LCS team FlyQuest, and has over 5 years of professional experience in the ADC role. He has held 3 accounts in top 15 challenger simultaneously."
+                    plug="Follow WildTurtle for high level educational content for bot lane."/>
                 </div>
                 <div className="matchup-table">
                     <MatchupTable championList={this.state.championList} search={this.state.search} 
