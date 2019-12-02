@@ -1,6 +1,5 @@
 import React from 'react';
 import colour from '../logic/colour.js';
-import Button from './Button.js';
 import '../css/MatchupRow.css'
 
 export default class MatchupRow extends React.Component {
