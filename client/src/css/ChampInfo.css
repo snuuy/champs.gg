@@ -41,7 +41,9 @@ h3 {
 }
 
 .socials-container {
+    display: flex;
     margin-top: 20px;
+    justify-content: center;
 }
 
 .social-icon {
