@@ -1,5 +1,9 @@
-var express = require('express')
+const express = require("express");
+const app = express();
 
-var app = express();
+//controllers
+const champion = require("./controllers/championController");
 
-app.listen(process.env.PORT || 80);
+app.use("/api/champion", champion);
+
+app.listen(process.env.PORT || 8000);
