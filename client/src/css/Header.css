@@ -19,22 +19,26 @@ h5 {
 
 .name-header {
     width: 325px;
+    border-top: 1px solid black;
     border-left: 1px solid black;
 }
 
 .roles-header {
     width: 300px;
+    border-top: 1px solid black;
     border-left: 2px solid black;
 }
 
 .rating-header {
     width: 150px;
+    border-top: 1px solid black;
     border-left: 2px solid black;
     border-right: 1px solid black;
 }
 
 .comment-header {
     width: 300px;
+    border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
