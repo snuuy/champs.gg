@@ -49,6 +49,13 @@ var champData = [
 		]
 	},
 	{
+		id: "Aphelios",
+		name: "Aphelios",
+		roles: [
+			"Bot"
+		]
+	},
+	{
 		id: "Ashe",
 		name: "Ashe",
 		roles: [
