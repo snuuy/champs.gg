@@ -6,7 +6,7 @@ import './css/App.css';
 
 /* ----------------------------------------------------------------------*/
 //PLACEHOLDER UNTIL BACKEND READY
-let placeholderChampion = champData[87];
+let placeholderChampion = champData[88];
 /* ----------------------------------------------------------------------*/
 let initialRole = placeholderChampion.roles[0];
 
@@ -37,7 +37,10 @@ export default class ChampApp extends React.Component {
             this.setState({
                 championList: champData.slice().filter(champ =>
                     champ.roles.includes(this.state.role) && champ.id !== placeholderChampion.id)
-                    .sort((a, b) => b.rating - a.rating)
+                    .sort((a, b) => b.rating - a.rating),
+                active: '↓',
+                ascending: false,
+                search: 'Search by name...',
             });
         })
     }
