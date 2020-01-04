@@ -9,8 +9,8 @@ let contributorSchema = new mongoose.Schema({
     message: String
 });
 
-championSchema.set("toJSON", { virtuals: true });
+contributorSchema.set("toJSON", { virtuals: true });
 
-const Champion = mongoose.model("Champion", championSchema, "Champions");
+const Contributor = mongoose.model("Champion", contributorSchema, "Champions");
 
-module.exports = { Champion };
+module.exports = { Contributor };
