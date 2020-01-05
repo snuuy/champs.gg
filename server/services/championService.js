@@ -3,8 +3,8 @@ const { Champion } = require("../services/dbService");
 
 module.exports = { getChampion };
 
-function getChampion(shortname) {
-  let champion = Champion.findOne({ shortname: shortname }).populate("contributor");
+async function getChampion(shortname) {
+  let champion = await Champion.findOne({ shortname: shortname });
   if (champion == null) {
     throw new Error("Champion not found")
   }

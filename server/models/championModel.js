@@ -6,15 +6,30 @@ let counterSchema = new mongoose.Schema({
   comments: String
 })
 
-let championSchema = new mongoose.Schema({
+let contributorSchema = new mongoose.Schema({
   name: String,
-  shortname: String,
+  twitter: String,
+  twitch: String,
+  opgg: String,
+  discord: String,
+  bio: String,
+  portrait: String,
+  message: String
+});
+
+let championSchema = new mongoose.Schema({
+  name: { type: String },
+  shortname: { type: String },
   votes: [mongoose.Schema.Types.ObjectId],
   totalScore: Number,
-  contributor: mongoose.Schema.Types.ObjectId,
-  top: [counterSchema],
-  mid: [counterSchema],
-  jungle: [counterSchema]
+  contributor: contributorSchema,
+  counters: {
+    top: [counterSchema],
+    mid: [counterSchema],
+    jungle: [counterSchema],
+    support: [counterSchema],
+    bot: [counterSchema]
+  }
 });
 
 championSchema.set("toJSON", { virtuals: true });
