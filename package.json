@@ -1,0 +1,9 @@
+{
+    "name": "champs.gg",
+    "version": "1.0.0",
+    "scripts": {
+      "client": "cd ./client && npm install && npm run build",
+      "server": "cd ./server && npm install && node app.js",
+      "start": "npm run client & npm run server"
+     }
+}
