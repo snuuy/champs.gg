@@ -22,14 +22,11 @@ let championSchema = new mongoose.Schema({
   shortname: { type: String },
   votes: [mongoose.Schema.Types.ObjectId],
   totalScore: Number,
-  contributor: contributorSchema,
-  counters: {
-    top: [counterSchema],
-    mid: [counterSchema],
-    jungle: [counterSchema],
-    support: [counterSchema],
-    bot: [counterSchema]
-  }
+  contributors: [contributorSchema],
+  roles: [{
+    role: String,
+    counters: [counterSchema]
+  }]
 });
 
 championSchema.set("toJSON", { virtuals: true });

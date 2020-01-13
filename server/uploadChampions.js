@@ -1036,10 +1036,6 @@ champData.forEach((champion, index) => {
     let data = {}
     data.name = champion.name;
     data.shortname = champion.id.toLocaleLowerCase();
-    data.counters = {}
-    champion.roles.forEach(role => {
-        data.counters[role] = []
-    })
     let champ = new Champion(data)
     try {
         champ.save()

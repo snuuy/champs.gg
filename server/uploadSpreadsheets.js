@@ -10,42 +10,45 @@ fs.readdir("../spreadsheets/", (err, files) => {
     let filePath = path.resolve(__dirname, "../spreadsheets/" + file);
     let wb = new Excel.Workbook();
     wb.xlsx.readFile(filePath).then(function () {
-      let champParams = { contributor: {}, counters: { top: [], mid: [], jungle: [], support: [], bot: [] } }
+      let champParams = { contributors: [], roles: [] }
       let metadata = wb.getWorksheet("metadata")
       console.log(file, metadata.getCell('B1').value)
+      contributor = {}
       try {
-        if (metadata.getCell('B3').value) champParams.contributor.name = metadata.getCell('B3').value;
-        if (metadata.getCell('B4').value) champParams.contributor.twitter = metadata.getCell('B4').value.text;
-        if (metadata.getCell('B5').value) champParams.contributor.twitch = metadata.getCell('B5').value.text;
-        if (metadata.getCell('B6').value) champParams.contributor.opgg = metadata.getCell('B6').value.text;
-        if (metadata.getCell('B7').value) champParams.contributor.youtube = metadata.getCell('B7').value.text;
+        if (metadata.getCell('B3').value) contributor.name = metadata.getCell('B3').value;
+        if (metadata.getCell('B4').value) contributor.twitter = metadata.getCell('B4').value.text;
+        if (metadata.getCell('B5').value) contributor.twitch = metadata.getCell('B5').value.text;
+        if (metadata.getCell('B6').value) contributor.opgg = metadata.getCell('B6').value.text;
+        if (metadata.getCell('B7').value) contributor.youtube = metadata.getCell('B7').value.text;
         if (metadata.getCell('B9').value && metadata.getCell('B9').value.hyperlink) {
-          if (metadata.getCell('B8').value) champParams.contributor.discord = metadata.getCell('B8').value.text;
-          if (metadata.getCell('B9').value) champParams.contributor.portrait = metadata.getCell('B9').value.text;
-          if (metadata.getCell('B10').value) champParams.contributor.bio = metadata.getCell('B10').value;
-          if (metadata.getCell('B1').value) champParams.contributor.message = metadata.getCell('B11').value;
+          if (metadata.getCell('B8').value) contributor.discord = metadata.getCell('B8').value.text;
+          if (metadata.getCell('B9').value) contributor.portrait = metadata.getCell('B9').value.text;
+          if (metadata.getCell('B10').value) contributor.bio = metadata.getCell('B10').value;
+          if (metadata.getCell('B1').value) contributor.message = metadata.getCell('B11').value;
         } else {
-          if (metadata.getCell('B8').value) champParams.contributor.portrait = metadata.getCell('B8').value.text;
+          if (metadata.getCell('B8').value) contributor.portrait = metadata.getCell('B8').value.text;
           if (metadata.getCell('B9').value) {
             if (metadata.getCell('B9').value.hyperlink) {
-              champParams.contributor.bio = metadata.getCell('B9').value.text;
+              contributor.bio = metadata.getCell('B9').value.text;
             }
             else {
-              champParams.contributor.bio = metadata.getCell('B9').value;
+              contributor.bio = metadata.getCell('B9').value;
             }
           }
           if (metadata.getCell('B10').value) {
             if (metadata.getCell('B10').value.hyperlink) {
-              champParams.contributor.message = metadata.getCell('B10').value.text;
+              contributor.message = metadata.getCell('B10').value.text;
             }
             else {
-              champParams.contributor.message = metadata.getCell('B10').value;
+              contributor.message = metadata.getCell('B10').value;
             }
           }
         }
+        champParams.contributors.push(contributor)
       } catch (e) { console.log(e.message) }
       wb.eachSheet((worksheet) => {
         if (worksheet.name != "metadata") {
+          champParams.roles.push({ role: worksheet.name.toLocaleLowerCase(), counters: [] })
           let i = 0;
           worksheet.eachRow(row => {
             i++
@@ -63,12 +66,16 @@ fs.readdir("../spreadsheets/", (err, files) => {
               if (counterChamp.comments && counterChamp.comments.richText) {
                 counterChamp.comments = counterChamp.comments.richText.text;
               }
-              champParams.counters[worksheet.name.toLocaleLowerCase()].push(counterChamp)
-              if (champParams.counters[worksheet.name.toLocaleLowerCase()].length == worksheet.actualRowCount - 1) {
-                Champion.updateOne({ shortname: metadata.getCell('B1').value.toLocaleLowerCase() }, champParams, (err, obj) => {
-                  console.log(metadata.getCell('B1').value.toLocaleLowerCase(), file, worksheet.name)
-                  if (err) console.log(err.message, file);
-                })
+              for (var j = 0; j < champParams.roles.length; j++) {
+                if (champParams.roles[j].role == worksheet.name.toLocaleLowerCase()) {
+                  champParams.roles[j].counters.push(counterChamp)
+                  if (champParams.roles[j].counters.length == worksheet.actualRowCount - 1) {
+                    Champion.updateOne({ shortname: metadata.getCell('B1').value.toLocaleLowerCase() }, champParams, (err, obj) => {
+                      console.log(metadata.getCell('B1').value.toLocaleLowerCase(), file, worksheet.name)
+                      if (err) console.log(err.message, file);
+                    })
+                  }
+                }
               }
             });
           });
