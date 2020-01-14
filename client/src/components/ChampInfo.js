@@ -28,9 +28,6 @@ export default class ChampInfo extends React.Component {
                     {this.props.roles.map(role => <RoleButton role={role} changeRole={this.props.changeRole}
                     activeRole={this.props.activeRole}/>)}
                 </div>
-                <div className="information">
-                    <h4>A higher number indicates a more difficult matchup. Opinions are provided by {this.props.playerName}.</h4>
-                </div>
             </div>
         );
     }

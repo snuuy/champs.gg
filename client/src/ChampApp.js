@@ -4,11 +4,9 @@ import MatchupTable from './components/MatchupTable.js';
 import champData from './data/champData.js';
 import './css/App.css';
 
-/* ----------------------------------------------------------------------*/
-//PLACEHOLDER UNTIL BACKEND READY
 let placeholderChampion = champData[88];
-/* ----------------------------------------------------------------------*/
 let initialRole = placeholderChampion.roles[0];
+var response;
 
 export default class ChampApp extends React.Component {
     constructor(props) {
@@ -29,6 +27,26 @@ export default class ChampApp extends React.Component {
         this.swapRating = this.swapRating.bind(this);
         this.sortChampions = this.sortChampions.bind(this);
         }
+
+    componentDidMount(){
+        var request = new XMLHttpRequest();
+        request.open("GET", "http://localhost:3000/api/champion/aatrox");
+        request.send();
+        request.onreadystatechange = event => {
+            if (event.target.readyState === 4 && event.target.status === 200 && event.target.responseText) {
+                response = JSON.parse(event.target.responseText);
+                this.setState({
+                    name: response.contributors[0].name,
+                    portrait: response.contributors[0].portrait,
+                    twitter: response.contributors[0].twitter,
+                    twitch: response.contributors[0].twitch,
+                    youtube: response.contributors[0].youtube,
+                    biography: response.contributors[0].bio,
+                    plug: response.contributors[0].message,
+                })
+            }
+        }
+    }
     
     changeRole(role) {
         this.setState({
@@ -99,11 +117,10 @@ export default class ChampApp extends React.Component {
                 <div className="champ-info-container">
                     <ChampInfo name={this.state.champion.name} rating={this.state.champion.rating.toFixed(2)} 
                     roles={this.state.champion.roles} changeRole={this.changeRole}
-                    activeRole={this.state.role} playerName="WildTurtle" id={this.state.champion.id}
-                    playerPicture="https://static-cdn.jtvnw.net/jtv_user_pictures/wildturtle-profile_image-c68219384e832612-300x300.png"
-                    twitter="https://www.twitter.com/wildturtle" opgg="https://na.op.gg/summoner/userName=wildturtle" twitch="https://www.twitch.tv/wildturtle"
-                    youtube="https://www.youtube.com/channel/UCy0omD6TIJklBme14VQqV6A" description="WildTurtle is the bot laner for LCS team FlyQuest, and has over 5 years of professional experience in the ADC role. He has held 3 accounts in top 15 challenger simultaneously."
-                    plug="Follow WildTurtle for high level educational content for bot lane."/>
+                    activeRole={this.state.role} playerName={this.state.name} id={this.state.champion.id}
+                    playerPicture={this.state.portrait}
+                    twitter={this.state.twitter} opgg={this.state.opgg} twitch={this.state.twitch}
+                    youtube={this.state.youtube} description={this.state.biography} plug={this.state.plug}/>
                 </div>
                 <div className="matchup-table">
                     <MatchupTable championList={this.state.championList} search={this.state.search} 

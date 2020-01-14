@@ -1,12 +1,14 @@
 #logo {
     font-size: 46px;
     margin: 10px;
+    margin-top: 25px;
     color: #2571B3;
 }
 
 .app-table {
     width: 775px;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 .matchup-table {
