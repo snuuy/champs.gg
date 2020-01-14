@@ -12,7 +12,8 @@ export default class MatchupHeader extends React.Component {
                         <Search 
                         search={this.props.search}
                         handleTextChange={this.props.handleTextChange}
-                        resetText={this.props.resetText}/>
+                        resetText={this.props.resetText}
+                        resetTextOffFocus={this.props.resetTextOffFocus}/>
                     </td>
                     <td className="rating-header">
                         <RatingToggle
