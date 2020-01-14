@@ -10,7 +10,7 @@ fs.readdir("../spreadsheets/", (err, files) => {
     let filePath = path.resolve(__dirname, "../spreadsheets/" + file);
     let wb = new Excel.Workbook();
     wb.xlsx.readFile(filePath).then(function () {
-      let champParams = { contributors: [], roles: [] }
+      let champParams = { contributors: [], counters: [] }
       let metadata = wb.getWorksheet("metadata")
       console.log(file, metadata.getCell('B1').value)
       contributor = {}
@@ -48,7 +48,7 @@ fs.readdir("../spreadsheets/", (err, files) => {
       } catch (e) { console.log(e.message) }
       wb.eachSheet((worksheet) => {
         if (worksheet.name != "metadata") {
-          champParams.roles.push({ role: worksheet.name.toLocaleLowerCase(), counters: [] })
+          champParams.counters.push({ role: worksheet.name.toLocaleLowerCase(), champions: [] })
           let i = 0;
           worksheet.eachRow(row => {
             i++
@@ -66,10 +66,10 @@ fs.readdir("../spreadsheets/", (err, files) => {
               if (counterChamp.comments && counterChamp.comments.richText) {
                 counterChamp.comments = counterChamp.comments.richText.text;
               }
-              for (var j = 0; j < champParams.roles.length; j++) {
-                if (champParams.roles[j].role == worksheet.name.toLocaleLowerCase()) {
-                  champParams.roles[j].counters.push(counterChamp)
-                  if (champParams.roles[j].counters.length == worksheet.actualRowCount - 1) {
+              for (var j = 0; j < champParams.counters.length; j++) {
+                if (champParams.counters[j].role == worksheet.name.toLocaleLowerCase()) {
+                  champParams.counters[j].champions.push(counterChamp)
+                  if (champParams.counters[j].champions.length == worksheet.actualRowCount - 1) {
                     Champion.updateOne({ shortname: metadata.getCell('B1').value.toLocaleLowerCase() }, champParams, (err, obj) => {
                       console.log(metadata.getCell('B1').value.toLocaleLowerCase(), file, worksheet.name)
                       if (err) console.log(err.message, file);
