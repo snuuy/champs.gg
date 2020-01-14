@@ -13,4 +13,4 @@ const vote = require("./routes/voteRoute");
 app.use("/api/champion", champion);
 app.use("/api/vote", vote);
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8000);

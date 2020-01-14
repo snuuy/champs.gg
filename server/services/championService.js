@@ -15,7 +15,10 @@ async function getChampion(shortname) {
 async function getAllChampions(cb) {
   Champion.find()
     .exec((err, champs) => {
-      if (err) return console.log(err);
+      if (err) {
+        cb(null)
+        return console.log(err);
+      }
       champions = []
       champs.forEach(champ => {
         champions.push({
