@@ -30,7 +30,7 @@ export default class ChampApp extends React.Component {
 
     componentDidMount() {
         var request = new XMLHttpRequest();
-        request.open("GET", "http://localhost:3000/api/champion/" + this.props.match.params.id);
+        request.open("GET", "/api/champion/" + this.props.match.params.id);
         request.send();
         request.onreadystatechange = event => {
             if (event.target.readyState === 4 && event.target.status === 200 && event.target.responseText) {
