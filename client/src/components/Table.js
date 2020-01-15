@@ -17,6 +17,7 @@ export default class Table extends React.Component {
         };
         this.handleTextChange = this.handleTextChange.bind(this);
         this.resetText = this.resetText.bind(this);
+        this.resetTextOffFocus = this.resetTextOffFocus.bind(this);
         this.openRoleMenu = this.openRoleMenu.bind(this);
         this.selectRole = this.selectRole.bind(this);
         this.swapRating = this.swapRating.bind(this);
@@ -33,12 +34,15 @@ export default class Table extends React.Component {
         });
     }
 
-    resetText(){
+    resetText() {
         if (this.state.search === 'Search by name...') {
             this.setState({
                 search: '',
             })
         }
+    }
+
+    resetTextOffFocus() {
         if (this.state.search === '') {
             this.setState({
                 search: 'Search by name...',
@@ -112,7 +116,7 @@ export default class Table extends React.Component {
                     search={this.state.search} roles={this.state.roles} ascending={this.state.ascending}
                     menuOpen={this.state.menuOpen} active={this.state.active} handleTextChange={this.handleTextChange}
                     resetText={this.resetText} openRoleMenu={this.openRoleMenu} selectRole={this.selectRole}
-                    swapRating={this.swapRating} page="main"
+                    swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus}
                     />
                 </div>
                 { this.state.champions.map(champion => <Row key={champion.id} name={champion.name} 
