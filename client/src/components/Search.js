@@ -6,6 +6,7 @@ export default class Search extends React.Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.reset = this.reset.bind(this);
+        this.resetFocus = this.resetFocus.bind(this);
     }
 
     handleChange(e) {
@@ -16,6 +17,10 @@ export default class Search extends React.Component {
         this.props.resetText();
     }
 
+    resetFocus(){
+        this.props.resetTextOffFocus();
+    }
+
     render() {
         return (
             <div>
@@ -23,7 +28,7 @@ export default class Search extends React.Component {
                 onChange={this.handleChange}
                 value={this.props.search}
                 onFocus={this.reset}
-                onBlur={this.reset}></input>
+                onBlur={this.resetFocus}></input>
             </div>
         );
     }

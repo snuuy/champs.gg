@@ -24,6 +24,7 @@ export default class ChampApp extends React.Component {
         this.changeRole = this.changeRole.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
         this.resetText = this.resetText.bind(this);
+        this.resetTextOffFocus = this.resetTextOffFocus.bind(this);
         this.swapRating = this.swapRating.bind(this);
         this.sortChampions = this.sortChampions.bind(this);
     }
@@ -80,6 +81,9 @@ export default class ChampApp extends React.Component {
                 search: '',
             })
         }
+    }
+
+    resetTextOffFocus() {
         if (this.state.search === '') {
             this.setState({
                 search: 'Search by name...',
@@ -125,8 +129,9 @@ export default class ChampApp extends React.Component {
                 <div className="matchup-table">
                     <MatchupTable championList={this.state.championList} search={this.state.search}
                         ascending={this.state.ascending} active={this.state.active}
-                        handleTextChange={this.handleTextChange} resetText={this.resetText}
-                        swapRating={this.swapRating} text="Difficulty " page="champ" />
+                        handleTextChange={this.handleTextChange} resetText={this.resetText} 
+                        resetTextOffFocus={this.resetTextOffFocus} swapRating={this.swapRating} 
+                        text="Difficulty " page="champ" />
                 </div>
                 <p className="riot">
                     champs.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games

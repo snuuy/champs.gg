@@ -9,7 +9,7 @@ export default class ChampInfo extends React.Component {
             <div className="champion-info">
                 <h1 className="champ-name-1">{this.props.name}</h1>
                 <div className="player-container">
-                    <img className="player-portrait" src={this.props.playerPicture} alt="" />
+                    <img className="player-portrait" src={this.props.playerPicture} alt=""/>
                     <div className="player-desc">
                         <h2 className="player-name">{this.props.playerName}</h2>
                         <h2 className="player-bio">{this.props.description}</h2>

@@ -12,7 +12,7 @@ export default class MatchupTable extends React.Component {
                     search={this.props.search} ascending={this.props.ascending} 
                     active={this.props.active} handleTextChange={this.props.handleTextChange}
                     resetText={this.props.resetText} swapRating={this.props.swapRating}
-                    text={this.props.text}/>
+                    text={this.props.text} resetTextOffFocus={this.props.resetTextOffFocus}/>
                 </div>
                 { this.props.championList.map(champion => <MatchupRow key={champion.id} name={champion.name} 
                 icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"}

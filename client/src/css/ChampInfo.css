@@ -26,6 +26,8 @@ h3 {
 .player-portrait {
     float: left;
     width: 150px;
+    height: 150px;
+    object-fit: cover;
     border: 1px solid black;
     box-shadow: 0 0 5px black;
 }
