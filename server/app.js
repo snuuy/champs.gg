@@ -4,6 +4,7 @@ const path = require("path");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
+app.set('trust proxy', true);
 
 const champion = require("./routes/championRoute");
 const vote = require("./routes/voteRoute");
