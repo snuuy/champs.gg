@@ -21,7 +21,7 @@ let championSchema = new mongoose.Schema({
   name: { type: String },
   shortname: { type: String },
   votes: [mongoose.Schema.Types.ObjectId],
-  totalScore: Number,
+  totalScore: { type: Number, default: 0 },
   contributors: [contributorSchema],
   roles: [String],
   counters: [{

@@ -3,28 +3,39 @@ const { Vote, Champion } = require("../services/dbService");
 
 module.exports = { scoreChampion };
 
-//incomplete
-function scoreChampion(name, score, ip) {
+function scoreChampion(name, score, ip, cb) {
+  if (score > 5 || score < 1)
+    cb(false, "Invalid score")
   Champion.findOne({ shortname: name })
     .then(champion => {
       if (!champion) throw new Error("Invalid champion");
-      Vote.findOne({ ip: ip, championId: champion._id })
+      Vote.findOne({ ip: ip, champion: champion._id })
         .then(vote => {
+          console.log(vote)
           if (!vote) {
-            Vote.create({ championId: champion._id, score: score, ip: ip });
+            let vote = new Vote({ champion: champion._id, score: score, ip: ip });
+            vote.save((err, vote) => {
+              if (!err) {
+                Champion.updateOne({ shortname: name }, { $push: { votes: vote._id }, $inc: { totalScore: score } }, err => {
+                  if (!err) cb(true)
+                  else cb(false, err)
+                })
+              }
+              else cb(false, err)
+            })
           }
           else if (vote.score != score) {
-            let diff = score - vote.score;
             vote.score = score;
-            champion.score += diff;
+            champion.totalScore += score - vote.score;
             vote.save();
             champion.save();
+            cb(true)
           }
           else if (vote.score == score) {
-            throw new Error("Duplicate vote");
+            cb(false, "Duplicate vote");
           }
         })
-        .catch(err => { throw err })
+        .catch(err => { cb(false, err); })
     })
-    .catch(err => { throw err })
+    .catch(err => { cb(false, err); })
 }
