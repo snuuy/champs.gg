@@ -1035,7 +1035,7 @@ champData.forEach((champion, index) => {
     console.log(champion.name)
     let data = {}
     data.name = champion.name;
-    data.shortname = champion.id.toLocaleLowerCase();
+    data.shortname = champion.id;
     data.roles = []
     champion.roles.forEach(role => {
         data.roles.push(role)

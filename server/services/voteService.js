@@ -16,7 +16,7 @@ function scoreChampion(name, score, ip, cb) {
             let vote = new Vote({ champion: champion._id, score: score, ip: ip });
             vote.save((err, vote) => {
               if (!err) {
-                Champion.updateOne({ shortname: name }, { $push: { votes: vote._id }, $inc: { totalScore: score } }, err => {
+                Champion.updateOne({ shortname: name }, { $inc: { totalScore: score, numVotes: 1 } }, err => {
                   if (!err) cb(true)
                   else cb(false, err)
                 })
