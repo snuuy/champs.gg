@@ -21,10 +21,11 @@ async function getAllChampions(cb) {
       }
       champions = []
       champs.forEach(champ => {
+        console.log(champ.totalScore / champ.numVotes)
         champions.push({
           name: champ.name,
           shortname: champ.shortname,
-          score: champs.totalScore / champ.votes.length,
+          score: champ.numVotes == 0 ? 0 : champ.totalScore / champ.numVotes,
           roles: champ.roles
         })
       });

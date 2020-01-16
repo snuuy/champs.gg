@@ -20,7 +20,7 @@ let contributorSchema = new mongoose.Schema({
 let championSchema = new mongoose.Schema({
   name: { type: String },
   shortname: { type: String },
-  numVotes: Number,
+  numVotes: { type: Number, default: 0 },
   totalScore: { type: Number, default: 0 },
   contributors: [contributorSchema],
   roles: [String],
