@@ -14,12 +14,16 @@ export default class MatchupTable extends React.Component {
                     resetText={this.props.resetText} swapRating={this.props.swapRating}
                     text={this.props.text} resetTextOffFocus={this.props.resetTextOffFocus}/>
                 </div>
-                { this.props.championList.map(champion => <MatchupRow key={champion.id} name={champion.name} 
-                icon={"https://ddragon.leagueoflegends.com/cdn/9.22.1/img/champion/" + champion.id + ".png"}
-                rating={champion.rating.toFixed(2)} page={this.props.page} comment="You one shot her on sight, she's very low life early so the invade is quite easy.
-                You can R while she R you to get no dmg, you can R her out of her invisibility.... lots of outplays possible
-                She's really useless once she gets behind, so if you manage to get few levels ahead early game is basically won"/>) } 
+                { this.props.championList.map(champion => <MatchupRow key={champion.champion.shortname} 
+                name={champion.champion.name} 
+                icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.champion.shortname + ".png"}
+                rating={champion.difficulty} page={this.props.page} comment={champion.comments}/>) } 
             </div>
         );
     }
 }
+/*
+            { this.props.championList.map(champion => <MatchupRow key={"champion.id"} name={"champion.name"} 
+                icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.id + ".png"}
+                rating={champion.difficulty} page={this.props.page} comment={champion.comments}/>) } 
+*/
