@@ -1,16 +1,9 @@
 import React from 'react';
 import ChampInfo from './ChampInfo';
 import MatchupTable from './MatchupTable';
-import champData from '../data/champData';
 import '../css/App.css';
 
 var response;
-
-/*
-            championList: champData.slice().filter(champ =>
-                champ.roles.includes(initialRole) && champ.id !== placeholderChampion.id)
-                .sort((a, b) => b.rating - a.rating),
-*/
 
 export default class ChampApp extends React.Component {
     constructor(props) {
@@ -21,7 +14,7 @@ export default class ChampApp extends React.Component {
             search: 'Search by name...',
             ascending: false,
             active: '↓',
-            roleList: [],
+            roleList: [""],
         }
         this.changeRole = this.changeRole.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
