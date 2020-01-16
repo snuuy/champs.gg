@@ -17,13 +17,9 @@ export default class MatchupTable extends React.Component {
                 { this.props.championList.map(champion => <MatchupRow key={champion.champion.shortname} 
                 name={champion.champion.name} 
                 icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.champion.shortname + ".png"}
-                rating={champion.difficulty} page={this.props.page} comment={champion.comments}/>) } 
+                rating={champion.difficulty} page={this.props.page} comment={champion.comments}
+                champId={champion.champion.shortname}/>) } 
             </div>
         );
     }
 }
-/*
-            { this.props.championList.map(champion => <MatchupRow key={"champion.id"} name={"champion.name"} 
-                icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.id + ".png"}
-                rating={champion.difficulty} page={this.props.page} comment={champion.comments}/>) } 
-*/
