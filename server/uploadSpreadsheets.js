@@ -57,7 +57,7 @@ fs.readdir("../spreadsheets/", (err, files) => {
             Champion.findOne({ name: row.getCell('A').value }, (err, champ) => {
               if (err) console.log(err)
               if (champ == null) {
-                console.log(row.getCell('A').value, row, file);
+                //console.log(row.getCell('A').value, row, file);
                 return;
               }
               counterChamp.champion = champ._id
@@ -70,8 +70,8 @@ fs.readdir("../spreadsheets/", (err, files) => {
                 if (champParams.counters[j].role == worksheet.name.toLocaleLowerCase()) {
                   champParams.counters[j].champions.push(counterChamp)
                   if (champParams.counters[j].champions.length == worksheet.actualRowCount - 1) {
-                    Champion.updateOne({ shortname: metadata.getCell('B1').value.toLocaleLowerCase() }, champParams, (err, obj) => {
-                      console.log(metadata.getCell('B1').value.toLocaleLowerCase(), file, worksheet.name)
+                    Champion.updateOne({ shortname: metadata.getCell('B1').value }, champParams, (err, obj) => {
+                      console.log(metadata.getCell('B1').value, file, worksheet.name)
                       if (err) console.log(err.message, file);
                     })
                   }
