@@ -12,10 +12,11 @@ export default class MatchupRow extends React.Component {
             <tbody>
                 <tr className="champ-row" style={this.rowStyles}>
                     <td className="name-container">
-                        <a href="#root" className="champ-name">{this.props.name}</a>
+                        <a href={this.props.champId} className="champ-name">{this.props.name}</a>
                     </td>
                     <td className="image-container">
-                        <img className="champ-icon" src={this.props.icon} alt={this.props.name}/>
+                        <a href={this.props.champId}><img className="champ-icon" src={this.props.icon}
+                        alt={this.props.name}/></a>
                     </td>
                     <td className="rating-container">
                         <h1 className="champ-rating">{this.props.rating}</h1>
