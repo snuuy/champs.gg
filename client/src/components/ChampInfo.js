@@ -26,7 +26,7 @@ export default class ChampInfo extends React.Component {
                 </div>
                 <div className="role-button-container">
                     {this.props.roles.map(role => <RoleButton role={role} changeRole={this.props.changeRole}
-                        activeRole={this.props.activeRole} />)}
+                        activeRole={this.props.activeRole}/>)} 
                 </div>
             </div>
         );
