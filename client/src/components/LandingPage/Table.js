@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Row from './Row';
+import Card from './Card';
 import '../../css/Table.css';
 
 export default class Table extends React.Component {
@@ -140,7 +140,7 @@ export default class Table extends React.Component {
                 />
                 <div className="row mx-0">
                     {this.state.champions.map(champion =>
-                        <Row key={champion.shortname} name={champion.name}
+                        <Card key={champion.shortname} name={champion.name}
                             icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.shortname + ".png"}
                             roles={champion.roles.join(', ')} rating={champion.score.toFixed(2)} page="main"
                             champId={champion.shortname}
