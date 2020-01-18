@@ -14,6 +14,7 @@ async function getChampion(shortname) {
 }
 
 async function getAllChampions(ip, cb) {
+  const votes = await Vote.find({ ip: ip })
   Champion.find()
     .exec((err, champs) => {
       if (err) {
@@ -22,16 +23,16 @@ async function getAllChampions(ip, cb) {
       }
       champions = []
       champs.forEach(champ => {
-        Vote.findOne({ champion: champ._id, ip: ip }, (err, vote) => {
-          champions.push({
-            name: champ.name,
-            shortname: champ.shortname,
-            score: champ.numVotes == 0 ? 0 : champ.totalScore / champ.numVotes,
-            roles: champ.roles,
-            userVote: vote ? vote.score : null
-          })
-          if (champions.length == champs.length) cb(champions)
+        let vote = votes.find((vote) => vote.champion == champ.id)
+        //console.log(vote)
+        champions.push({
+          name: champ.name,
+          shortname: champ.shortname,
+          score: champ.numVotes == 0 ? 0 : champ.totalScore / champ.numVotes,
+          roles: champ.roles,
+          userVote: vote ? vote.score : null
         })
       });
+      cb(champions)
     });
 }

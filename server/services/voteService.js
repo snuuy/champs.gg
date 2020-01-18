@@ -11,7 +11,6 @@ function scoreChampion(name, score, ip, cb) {
       if (!champion) cb(false, "Invalid champion")
       Vote.findOne({ ip: ip, champion: champion._id })
         .then(vote => {
-          console.log(vote)
           if (!vote) {
             let vote = new Vote({ champion: champion._id, score: score, ip: ip });
             vote.save((err, vote) => {
@@ -25,8 +24,8 @@ function scoreChampion(name, score, ip, cb) {
             })
           }
           else if (vote.score != score) {
-            vote.score = score;
             champion.totalScore += score - vote.score;
+            vote.score = score;
             vote.save();
             champion.save();
             cb(true)
