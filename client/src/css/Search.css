@@ -1,12 +1,22 @@
-input {
-    height: 75px;
-    width: 324px;
-    border: 0;
-    background-color: #423E3E;
-    color: #D6CECE;
-    font-size: 22px;
+.search-input {
+    border: none !important;
+    border-color: transparent !important;
+    background: transparent !important;
+    display: inline;
 }
 
-input:focus {
-    outline: none;
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }

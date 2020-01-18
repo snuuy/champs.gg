@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/RoleButton.css';
+import '../../css/RoleButton.css';
 
 export default class RoleButton extends React.Component {
     constructor(props) {
@@ -10,13 +10,13 @@ export default class RoleButton extends React.Component {
     changeDisplayedRole(role) {
         this.props.changeRole(role);
     }
-    
+
     render() {
         return (
             <div>
                 <button className={this.props.activeRole === this.props.role ? "active" : "inactive"}
-                style={this.props.styles} onClick={ () => {this.changeDisplayedRole(this.props.role)}}>
-                {this.props.role}</button>
+                    style={this.props.styles} onClick={() => { this.changeDisplayedRole(this.props.role) }}>
+                    {this.props.role}</button>
             </div>
         );
     }
