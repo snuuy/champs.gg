@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Champion } = require("../services/dbService");
+const { Vote } = require("../services/dbService");
 
 module.exports = { getChampion, getAllChampions };
 
@@ -12,7 +13,7 @@ async function getChampion(shortname) {
   return champion;
 }
 
-async function getAllChampions(cb) {
+async function getAllChampions(ip, cb) {
   Champion.find()
     .exec((err, champs) => {
       if (err) {
@@ -21,14 +22,16 @@ async function getAllChampions(cb) {
       }
       champions = []
       champs.forEach(champ => {
-        console.log(champ.totalScore / champ.numVotes)
-        champions.push({
-          name: champ.name,
-          shortname: champ.shortname,
-          score: champ.numVotes == 0 ? 0 : champ.totalScore / champ.numVotes,
-          roles: champ.roles
+        Vote.findOne({ champion: champ._id, ip: ip }, (err, vote) => {
+          champions.push({
+            name: champ.name,
+            shortname: champ.shortname,
+            score: champ.numVotes == 0 ? 0 : champ.totalScore / champ.numVotes,
+            roles: champ.roles,
+            userVote: vote ? vote.score : null
+          })
+          if (champions.length == champs.length) cb(champions)
         })
       });
-      cb(champions)
     });
 }

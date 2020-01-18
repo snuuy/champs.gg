@@ -8,7 +8,7 @@ function scoreChampion(name, score, ip, cb) {
     cb(false, "Invalid score")
   Champion.findOne({ shortname: name })
     .then(champion => {
-      if (!champion) throw new Error("Invalid champion");
+      if (!champion) cb(false, "Invalid champion")
       Vote.findOne({ ip: ip, champion: champion._id })
         .then(vote => {
           console.log(vote)

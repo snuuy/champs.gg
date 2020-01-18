@@ -3,7 +3,7 @@ const router = express.Router();
 const ChampionService = require("../services/championService");
 
 router.get("/all", (req, res) => {
-  ChampionService.getAllChampions((champions) => {
+  ChampionService.getAllChampions(req.ip, (champions) => {
     if (champions != null) res.status(200).send(champions);
     else res.sendStatus(500)
   })
