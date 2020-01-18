@@ -54,7 +54,7 @@ export default class Row extends React.Component {
 
     render() {
         return (
-            <div className="col-3 px-2 my-2">
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-12 px-2 my-2">
                 <div className="card">
                     <div className="m-2">
                         <div className="d-inline-block align-middle">
