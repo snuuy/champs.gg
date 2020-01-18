@@ -23,8 +23,8 @@ export default class Search extends React.Component {
 
     render() {
         return (
-            <div class="form-group has-search my-auto">
-                <span class="fa fa-search form-control-feedback"></span>
+            <div className="form-group has-search my-auto">
+                <span className="fa fa-search form-control-feedback"></span>
                 <input className="d-inline-block search-input form-control" type="text"
                     onChange={this.handleChange}
                     value={this.props.search}

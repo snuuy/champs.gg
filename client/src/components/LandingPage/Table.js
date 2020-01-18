@@ -32,6 +32,7 @@ export default class Table extends React.Component {
         request.onreadystatechange = event => {
             if (event.target.readyState === 4 && event.target.status === 200 && event.target.responseText) {
                 const response = JSON.parse(event.target.responseText);
+                response.sort((a, b) => b.score - a.score)
                 this.setState({ champData: response, champions: response, loading: false })
             }
         }
@@ -81,6 +82,7 @@ export default class Table extends React.Component {
     }
 
     swapRating(e) {
+        console.log(e.target.value)
         this.setState({
             ascending: e.target.value == "high",
         }, () => {
@@ -112,10 +114,10 @@ export default class Table extends React.Component {
                 break;
             default:
         }
-        if (this.state.ascending) {
-            champions.sort((a, b) => a.rating - b.rating);
+        if (!this.state.ascending) {
+            champions.sort((a, b) => a.score - b.score);
         } else {
-            champions.sort((a, b) => b.rating - a.rating);
+            champions.sort((a, b) => b.score - a.score);
         }
         return champions;
     }
@@ -136,12 +138,13 @@ export default class Table extends React.Component {
                     resetText={this.resetText} openRoleMenu={this.openRoleMenu} selectRole={this.selectRole}
                     swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus}
                 />
-                <div className="row">
+                <div className="row mx-0">
                     {this.state.champions.map(champion =>
                         <Row key={champion.shortname} name={champion.name}
                             icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.shortname + ".png"}
                             roles={champion.roles.join(', ')} rating={champion.score.toFixed(2)} page="main"
                             champId={champion.shortname}
+                            userVote={champion.userVote}
                         />
                     )}
                 </div>

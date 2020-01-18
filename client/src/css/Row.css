@@ -6,7 +6,7 @@
     width: 35px;
     height: 35px;
     text-align: center;
-    background: #2571B3;
+    background: lightgrey;
     font-weight: bold;
 }
 
@@ -15,6 +15,7 @@
     border-radius: 50%;
     border: 3px solid #e2e2e2;
     padding: 2px;
+    padding-left: 1px;
     padding-top: 0px;
     margin-right: 4px;
     width: 30px;
@@ -52,10 +53,40 @@
     display: inline-block;
     margin-right: 4px;
   }
+
+  .champ-rating-voted {
+    background-color: #e2e2e2;
+    color:white;
+    border:3px solid #e2e2e2;
+    cursor: default !important;
+  }
+
+  .champ-rating-voted:hover {
+    background-color: #e2e2e2;
+    color:white;
+    border:3px solid #e2e2e2;
+  }
   
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  .rating-S {
+    background: rgb(19, 82, 138);
+  }
+
+  .rating-A {
+    background:#2C3E63;
+  }
+  .rating-B {
+    background:#3B334C;
+  }
+  .rating-C {
+    background:#50222B;
+  }
+  .rating-D {
+      background: #6B0D01;
   }
 
 .card {

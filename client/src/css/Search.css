@@ -5,6 +5,10 @@
     display: inline;
 }
 
+.search-input:focus {
+    box-shadow: none !important;
+}
+
 .has-search .form-control {
     padding-left: 2.375rem;
 }
