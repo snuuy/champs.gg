@@ -1,15 +1,11 @@
-.row {
-    width: 775px;
-}
-
-.matchup {
-    width: 775px;
-}
-
-.row:first-child {
-    border-top: 2px solid black;
-}
-
-.row:last-child {
-    border-bottom: 2px solid black;
-}
+.table-loading {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #2571B3; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    color:transparent;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 4px;
+  }

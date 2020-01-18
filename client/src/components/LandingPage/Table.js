@@ -1,19 +1,20 @@
 import React from 'react';
-import Header from './Header.js';
+import Header from './Header';
 import Row from './Row';
-import champData from '../data/champData.js';
-import '../css/Table.css';
+import '../../css/Table.css';
 
 export default class Table extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            search: 'Search by name...',
+            loading: true,
+            search: '',
             roles: 'All Roles',
             ascending: false,
             menuOpen: false,
             active: '↓',
-            champions: champData.slice().sort((a, b) => b.rating - a.rating)
+            champions: [],
+            champData: []
         };
         this.handleTextChange = this.handleTextChange.bind(this);
         this.resetText = this.resetText.bind(this);
@@ -24,12 +25,24 @@ export default class Table extends React.Component {
         this.sortChampions = this.sortChampions.bind(this);
     }
 
+    componentDidMount() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "/api/champion/all");
+        request.send();
+        request.onreadystatechange = event => {
+            if (event.target.readyState === 4 && event.target.status === 200 && event.target.responseText) {
+                const response = JSON.parse(event.target.responseText);
+                this.setState({ champData: response, champions: response, loading: false })
+            }
+        }
+    }
+
     handleTextChange(value) {
         this.setState({
             search: value,
         }, () => {
             this.setState({
-                champions: this.sortChampions(champData.slice()),
+                champions: this.sortChampions(this.state.champData.slice()),
             })
         });
     }
@@ -62,18 +75,17 @@ export default class Table extends React.Component {
             menuOpen: false,
         }, () => {
             this.setState({
-                champions: this.sortChampions(champData.slice()),
+                champions: this.sortChampions(this.state.champData.slice()),
             })
         });
     }
 
-    swapRating() {
+    swapRating(e) {
         this.setState({
-            active: this.state.ascending ? '↓' : '↑',
-            ascending: !this.state.ascending,
+            ascending: e.target.value == "high",
         }, () => {
             this.setState({
-                champions: this.sortChampions(champData.slice()),
+                champions: this.sortChampions(this.state.champData.slice()),
             });
         });
     }
@@ -82,7 +94,7 @@ export default class Table extends React.Component {
         if (this.state.search !== '' && this.state.search !== 'Search by name...') {
             champions = champions.filter(champ => champ.name.toUpperCase().includes(this.state.search.toUpperCase()));
         }
-        switch(this.state.roles) {
+        switch (this.state.roles) {
             case 'Top':
                 champions = champions.filter(champ => champ.roles.includes('Top'));
                 break;
@@ -109,20 +121,30 @@ export default class Table extends React.Component {
     }
 
     render() {
+        if (this.state.loading) {
+            return (
+                <div className="text-center mb-5">
+                    <div className="table-loading"></div>
+                </div>
+            )
+        }
         return (
-            <div>
-                <div className="row">
-                    <Header
+            <div class="table">
+                <Header
                     search={this.state.search} roles={this.state.roles} ascending={this.state.ascending}
                     menuOpen={this.state.menuOpen} active={this.state.active} handleTextChange={this.handleTextChange}
                     resetText={this.resetText} openRoleMenu={this.openRoleMenu} selectRole={this.selectRole}
                     swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus}
-                    />
+                />
+                <div className="row">
+                    {this.state.champions.map(champion =>
+                        <Row key={champion.shortname} name={champion.name}
+                            icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.shortname + ".png"}
+                            roles={champion.roles.join(', ')} rating={champion.score.toFixed(2)} page="main"
+                            champId={champion.shortname}
+                        />
+                    )}
                 </div>
-                { this.state.champions.map(champion => <Row key={champion.id} name={champion.name} 
-                icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.id + ".png"}
-                roles={champion.roles.join(', ')} rating={champion.rating.toFixed(2)} page="main"
-                champId={champion.id}/>) }
             </div>
         );
     }
