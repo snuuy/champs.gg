@@ -6,7 +6,9 @@ let contributorSchema = new mongoose.Schema({
     twitch: String,
     bio: String,
     portrait: String,
-    message: String
+    message: String,
+    instagram: String,
+    facebook: String
 });
 
 contributorSchema.set("toJSON", { virtuals: true });

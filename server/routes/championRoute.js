@@ -10,7 +10,7 @@ router.get("/all", (req, res) => {
 });
 
 router.get("/:shortname", (req, res) => {
-  ChampionService.getChampion(req.params.shortname)
+  ChampionService.getChampion(req.params.shortname, req.ip)
     .then(champion => res.status(200).send(champion))
     .catch(err => res.status(400).send(err.message))
 });

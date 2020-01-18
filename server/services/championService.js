@@ -4,12 +4,16 @@ const { Vote } = require("../services/dbService");
 
 module.exports = { getChampion, getAllChampions };
 
-async function getChampion(shortname) {
+async function getChampion(shortname, ip) {
   let champion = await Champion.findOne({ shortname: shortname })
     .populate("counters.champions.champion", "-counters -votes -contributors")
+    .lean()
   if (champion == null) {
     throw new Error("Champion not found")
+    return;
   }
+  const vote = await Vote.findOne({ ip: ip, champion: champion._id })
+  if (vote) champion.userVote = vote.score
   return champion;
 }
 
