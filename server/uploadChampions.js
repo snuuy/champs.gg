@@ -95,7 +95,7 @@ var champData = [
         id: "Brand",
         name: "Brand",
         roles: [
-            "Mid", "Support"
+            "Support"
         ]
     },
     {
@@ -130,7 +130,7 @@ var champData = [
         id: "Chogath",
         name: "Cho'Gath",
         roles: [
-            "Top", "Mid"
+            "Top"
         ]
     },
     {
@@ -221,7 +221,7 @@ var champData = [
         id: "Galio",
         name: "Galio",
         roles: [
-            "Mid", "Support"
+            "Mid"
         ]
     },
     {
@@ -270,7 +270,7 @@ var champData = [
         id: "Heimerdinger",
         name: "Heimerdinger",
         roles: [
-            "Top", "Mid"
+            "Top", "Mid", "Bot"
         ]
     },
     {
@@ -312,7 +312,7 @@ var champData = [
         id: "Jax",
         name: "Jax",
         roles: [
-            "Top", "Jungle"
+            "Top"
         ]
     },
     {
@@ -620,7 +620,7 @@ var champData = [
         id: "Qiyana",
         name: "Qiyana",
         roles: [
-            "Top", "Jungle", "Mid"
+            "Jungle", "Mid"
         ]
     },
     {
@@ -701,6 +701,13 @@ var champData = [
         ]
     },
     {
+        id: "Sett",
+        name: "Sett",
+        roles: [
+            "Top"
+        ]
+    },
+    {
         id: "Shaco",
         name: "Shaco",
         roles: [
@@ -711,7 +718,7 @@ var champData = [
         id: "Shen",
         name: "Shen",
         roles: [
-            "Top", "Support"
+            "Top"
         ]
     },
     {
@@ -767,21 +774,21 @@ var champData = [
         id: "Swain",
         name: "Swain",
         roles: [
-            "Top", "Mid"
+            "Mid", "Support"
         ]
     },
     {
         id: "Sylas",
         name: "Sylas",
         roles: [
-            "Top", "Jungle", "Mid"
+            "Top", "Mid"
         ]
     },
     {
         id: "Syndra",
         name: "Syndra",
         roles: [
-            "Mid", "Bot"
+            "Mid"
         ]
     },
     {
@@ -893,7 +900,7 @@ var champData = [
         id: "Veigar",
         name: "Veigar",
         roles: [
-            "Mid", "Bot"
+            "Mid"
         ]
     },
     {
