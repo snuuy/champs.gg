@@ -14,7 +14,7 @@ export default class CountersTable extends React.Component {
         }
         this.state = {
             counters: this.props.counters,
-            contributorName: this.props.contributorName,
+            championName: this.props.championName,
             roleCounters: roleCounters,
             visibleCounters: roleCounters,
             roles: roles,
@@ -54,9 +54,9 @@ export default class CountersTable extends React.Component {
         let { roles, visibleCounters, contributorName } = this.state;
         return (
             <div>
-                <div className="row bg-light py-2 text-center border-top border-bottom search-bar">
-                    <div className="col-lg-3 col-7 my-auto">
-                        <div className="form-group has-search my-auto">
+                <div className="row bg-light py-2 text-center border-top border-bottom">
+                    <div className="col-md-5 col-7 my-auto text-left">
+                        <div className="form-group has-search my-auto d-inline-block">
                             <span className="fa fa-search form-control-feedback"></span>
                             <input className="d-inline-block search-input form-control" type="text"
                                 onChange={(e) => this.search(e.target.value)}
@@ -67,7 +67,10 @@ export default class CountersTable extends React.Component {
                             />
                         </div>
                     </div>
-                    <div className="col-5 col-lg-6 my-auto">
+                    <div className="col-md-2 col-0 d-none d-md-block font-weight-bold my-auto h4 pl-3 text-center">
+                        Matchups
+                    </div>
+                    <div className="col-5 col-md-5 my-auto text-right">
                         <div className="d-inline-block text-muted mr-2 align-middle font-weight-bold">Role</div>
                         <select className="align-middle" onChange={(e) => this.selectRole(e.target.value)}>
                             {
@@ -124,7 +127,7 @@ export default class CountersTable extends React.Component {
                             <div className="col-md-1 col-2 align-middle h2 my-auto text-center difficulty-font">
                                 {counter.difficulty}
                             </div>
-                            <div className="col-lg-8 col-md-7 pl-3 my-auto pt-2 pt-md-0 comments-text">
+                            <div className="col-lg-8 col-md-7 pl-3 my-auto pt-2 pt-md-0 comments-text text-dark">
                                 {counter.comments ?
                                     <ShowMoreText
                                         lines={2}

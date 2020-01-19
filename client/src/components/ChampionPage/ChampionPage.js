@@ -55,17 +55,19 @@ export default class ChampionPage extends React.Component {
                 <Tooltip />
                 <div className="container p-0 p-md-3 mt-lg-3">
                     <div
-                        className="champ-splash w-100 d-none d-md-block rounded-top"
+                        className="champ-splash position-relative w-100 d-none d-md-block rounded-top"
                         style={{ backgroundImage: "url('https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-" + champion.shortname.toLowerCase() + ".jpg')" }}
                     >
-
+                        <div style={{ position: "absolute", left: "25px", bottom: "25px" }}>
+                            <a href="/"><div className="btn btn-sm btn-light"><i className="fas fa-arrow-left"></i> All Champions</div></a>
+                        </div>
                     </div>
                     <div className="bg-white">
                         <div className="row px-4 py-3 my-auto">
-                            <div className="col-12 col-lg-5 mb-3 mb-lg-0 mt-3 mt-md-0">
+                            <div className="col-12 col-lg-6 col-xl-5 mb-3 mb-lg-0">
                                 <div className="d-inline-block align-middle">
                                     <img
-                                        className="mr-3"
+                                        className="mr-3 champ-img"
                                         src={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.shortname + ".png"}
                                         alt={champion.name}
                                     />
@@ -73,30 +75,42 @@ export default class ChampionPage extends React.Component {
                                 <div class="d-inline-block align-middle">
                                     <div className="h1 font-weight-bold text-dark mb-0 pb-0">{champion.name}</div>
                                     <div className="ml-1 mb-2 small text-uppercase text-muted align-middle">{champion.roles.join(', ')}</div>
-                                    <Voting
-                                        champId={champion.shortname}
-                                        userVote={champion.userVote}
-                                        rating={champion.numVotes == 0 ? 0 : champion.totalScore / champion.numVotes}
-                                    />
+                                    <hr className="mb-2 mt-1 pl-2" />
+                                    <div className="py-1 px-3">
+                                        <Voting
+                                            champId={champion.shortname}
+                                            userVote={champion.userVote}
+                                            rating={champion.numVotes == 0 ? 0 : champion.totalScore / champion.numVotes}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-12 col-lg-7">
+                            <div className="col-12 col-lg-6 col-xl-7">
                                 <Contributor champion={champion.name} info={champion.contributors[0]} />
                             </div>
                         </div>
                     </div>
                     <div className="mx-3">
                         {champion.counters.length > 0 && champion.contributors.length > 0 ?
-                            <CountersTable contributorName={champion.contributors[0].name} counters={champion.counters} roles={champion.roles} />
+                            <>
+                                {/* <div className="row bg-light py-2 border-top ">
+                                    <div className="font-weight-bold mx-auto">Matchups with {champion.name}</div>
+                                </div> */}
+                                <CountersTable
+                                    contributorName={champion.contributors[0].name}
+                                    counters={champion.counters}
+                                    roles={champion.roles}
+                                />
+                            </>
                             : <></>}
                     </div>
                     <p className="riot text-center small my-4">
                         champs.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games
                     or anyone <br /> officially involved in producing or managing League of Legends. League of Legends
                     and Riot Games are <br /> trademarks or registered trademarks of Riot Games, Inc. League of Legends
-                                                                                © Riot Games, Inc.
+                                                                                                                                                                                                                                                                                            © Riot Games, Inc.
                 </p>
-                </div>
+                </div >
             </>
         );
     }

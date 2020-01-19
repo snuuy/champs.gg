@@ -20,6 +20,23 @@ fs.readdir("../spreadsheets/", (err, files) => {
         if (metadata.getCell('B5').value) contributor.twitch = metadata.getCell('B5').value.text;
         if (metadata.getCell('B6').value) contributor.opgg = metadata.getCell('B6').value.text;
         if (metadata.getCell('B7').value) contributor.youtube = metadata.getCell('B7').value.text;
+        if (metadata.getCell('B12').value) contributor.comments = metadata.getCell('B12').value.text;
+        if (metadata.getCell('B13').value) {
+          if (metadata.getCell('B13').value.hyperlink) {
+            contributor.instagram = metadata.getCell('B13').value.text;
+          }
+          else {
+            contributor.instagram = metadata.getCell('B13').value;
+          }
+        }
+        if (metadata.getCell('B14').value) {
+          if (metadata.getCell('B14').value.hyperlink) {
+            contributor.facebook = metadata.getCell('B14').value.text;
+          }
+          else {
+            contributor.facebook = metadata.getCell('B14').value;
+          }
+        }
         if (metadata.getCell('B9').value && metadata.getCell('B9').value.hyperlink) {
           if (metadata.getCell('B8').value) contributor.discord = metadata.getCell('B8').value.text;
           if (metadata.getCell('B9').value) contributor.portrait = metadata.getCell('B9').value.text;

@@ -51,14 +51,14 @@ export default class Voting extends React.Component {
         let { isCard } = this.props;
         return (
             <ul className="list-group list-group-flush">
-                <li className="list-group-item border-top" >
+                <li className={"list-group-item " + (isCard ? "border-top" : "p-0")}>
                     <div className="row">
                         <div className={"col-2 " + (isCard ? "" : "pl-0")}>
                             <div className={"champ-rating-solid rating-" + this.ratingToTier(this.state.rating)}>
                                 {this.ratingToTier(this.state.rating)}
                             </div>
                         </div>
-                        <div className={"col-10 " + (isCard ? "text-right" : "text-left")}>
+                        <div className={"col-10 " + (isCard ? "text-right" : "text-left pr-0 pl-2")}>
                             <div
                                 onClick={() => this.vote(5)}
                                 className={
@@ -107,7 +107,7 @@ export default class Voting extends React.Component {
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul >
         );
     }
 }
