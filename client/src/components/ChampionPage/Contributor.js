@@ -14,7 +14,7 @@ export default class Contributor extends React.Component {
                 <div className="w-100">
                     <img className="contrib-portrait float-left mr-3 ml-3" src={require('../../assets/contributors/' + info.name + '.jpg')} />
                     <span className="d-block text-muted small text-uppercase mb-1" style={{ marginTop: "-3px" }}>
-                        Opinions by
+                        Opinions from
                     </span>
                     <div className="contrib-name">
                         {info.name}
@@ -32,7 +32,7 @@ export default class Contributor extends React.Component {
                         </div>
                     </div>
                     <div className="text-dark small py-0 my-0 overflow-hidden">
-                        {info.bio}
+                        {info.bio + " " + info.message}
                     </div>
                 </div>
             </div>

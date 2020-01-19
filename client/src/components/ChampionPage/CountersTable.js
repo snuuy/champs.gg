@@ -14,7 +14,7 @@ export default class CountersTable extends React.Component {
         }
         this.state = {
             counters: this.props.counters,
-            championName: this.props.championName,
+            contributorName: this.props.contributorName,
             roleCounters: roleCounters,
             visibleCounters: roleCounters,
             roles: roles,

@@ -9,3 +9,8 @@ body {
     font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-weight: bold;
 }
+
+.footer {
+    background: #e0e0e0;
+    box-shadow: 0px 1000px 0px 1000px #e0e0e0;
+}

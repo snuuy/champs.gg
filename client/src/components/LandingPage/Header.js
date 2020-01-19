@@ -18,7 +18,7 @@ export default class Header extends React.Component {
                     </div>
                     <div className="col-6 my-auto d-md-block d-none">
                         <RoleToggle
-                            roles={this.props.roles}
+                            role={this.props.role}
                             menuOpen={this.props.menuOpen}
                             openRoleMenu={this.props.openRoleMenu}
                             selectRole={this.props.selectRole} />
