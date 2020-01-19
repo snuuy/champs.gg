@@ -40,12 +40,11 @@ export default class Voting extends React.Component {
             if (event.target.readyState === 4) {
                 voteLoading[rating - 1] = false;
                 this.setState({ voteLoading });
-                this.setState({ userVote: rating })
                 if (event.target.status === 200) {
-
+                    this.setState({ userVote: rating })
                 }
                 else {
-                    alert(event.target.responseText)
+                    console.log(event.target.responseText)
                 }
             }
         }
