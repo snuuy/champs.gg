@@ -31,18 +31,8 @@ export default class ChampionPage extends React.Component {
         }
     }
 
-    ratingToTier(rating) {
-        if (rating == 0) return "?"
-        if (rating >= 4.5) return "S";
-        if (rating >= 4) return "A"
-        if (rating >= 3) return "B";
-        if (rating >= 2) return "C";
-        if (rating >= 1) return "D";
-    }
-
     render() {
         let { champion } = this.state
-        let tier = this.ratingToTier(champion.numVotes == 0 ? 0 : champion.totalScore / champion.numVotes)
         if (this.state.loading) {
             return (
                 <div className="my-5 text-center">

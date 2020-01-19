@@ -15,17 +15,6 @@ export default class Card extends React.Component {
         };
     }
 
-    ratingToTier(rating) {
-        if (rating == 0) return "?"
-        if (rating >= 4.5) return "S";
-        if (rating >= 4) return "A"
-        if (rating >= 3) return "B";
-        if (rating >= 2) return "C";
-        if (rating >= 1) return "D";
-    }
-
-
-
     vote(rating) {
         if (rating == this.state.userVote) return;
         let { voteLoading } = this.state;
