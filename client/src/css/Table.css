@@ -9,3 +9,9 @@
     display: inline-block;
     margin-right: 4px;
   }
+
+  .instructions {
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: "Source Sans Pro";
+  }
