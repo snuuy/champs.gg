@@ -15,8 +15,8 @@ export default class RatingToggle extends React.Component {
         return (
             <div className="align-middle">
                 <select className="p-1" onChange={this.swapRating}>
-                    <option value="high">Highest tier</option>
-                    <option value="low">Lowest tier</option>
+                    <option value="high">Highest Tier</option>
+                    <option value="low">Lowest Tier</option>
                 </select>
             </div>
         );
