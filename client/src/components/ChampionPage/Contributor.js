@@ -1,4 +1,5 @@
 import React from 'react';
+import Linkify from 'react-linkify'
 export default class Contributor extends React.Component {
     render() {
         let { info, champion } = this.props;
@@ -34,7 +35,7 @@ export default class Contributor extends React.Component {
                         </div>
                     </div>
                     <div className="text-dark small py-0 my-0 overflow-hidden d-block p-3 p-md-0">
-                        {info.bio + " "} {info.message ? info.message : ""}
+                        <Linkify properties={{ target: '_blank' }}>{info.bio + " "} {info.message ? info.message : ""}</Linkify>
                     </div>
                 </div>
             </div>

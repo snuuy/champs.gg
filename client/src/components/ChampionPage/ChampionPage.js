@@ -87,7 +87,7 @@ export default class ChampionPage extends React.Component {
                             <>
                                 {champion.contributors[0].comments ?
                                     <div className="row bg-light py-2 border-top text-dark" style={{ fontSize: "15px" }}>
-                                        <div className="px-4"><Linkify>{champion.contributors[0].comments}</Linkify></div>
+                                        <div className="px-4"><Linkify properties={{ target: '_blank' }}>{champion.contributors[0].comments}</Linkify></div>
                                     </div>
                                     : <></>}
                                 <CountersTable
