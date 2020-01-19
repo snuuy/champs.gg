@@ -8,7 +8,10 @@ app.set('trust proxy', true);
 const champion = require("./routes/championRoute");
 const vote = require("./routes/voteRoute");
 
-app.get('/api', cors({ origin: 'https://champs.gg' }))
+app.use(cors({
+    origin: ["https://champs.gg"],
+    optionsSuccessStatus: 200
+}))
 //use routes
 app.use("/api/champion", champion);
 app.use("/api/vote", vote);
