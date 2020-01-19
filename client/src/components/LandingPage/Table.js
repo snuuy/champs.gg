@@ -9,7 +9,7 @@ export default class Table extends React.Component {
         this.state = {
             loading: true,
             search: '',
-            roles: 'All Roles',
+            role: 'All Roles',
             ascending: true,
             menuOpen: false,
             active: '↓',
@@ -72,8 +72,7 @@ export default class Table extends React.Component {
 
     selectRole(role) {
         this.setState({
-            roles: role,
-            menuOpen: false,
+            role: role,
         }, () => {
             this.setState({
                 champions: this.sortChampions(this.state.champData.slice()),
@@ -96,7 +95,7 @@ export default class Table extends React.Component {
         if (this.state.search !== '' && this.state.search !== 'Search by name...') {
             champions = champions.filter(champ => champ.name.toUpperCase().includes(this.state.search.toUpperCase()));
         }
-        switch (this.state.roles) {
+        switch (this.state.role) {
             case 'Top':
                 champions = champions.filter(champ => champ.roles.includes('Top'));
                 break;
@@ -119,13 +118,14 @@ export default class Table extends React.Component {
         } else {
             champions.sort((a, b) => b.score - a.score);
         }
+        console.log(champions)
         return champions;
     }
 
     render() {
         if (this.state.loading) {
             return (
-                <div className="text-center mb-5">
+                <div className="text-center mb-5 pb-4">
                     <div className="table-loading"></div>
                 </div>
             )
@@ -136,10 +136,10 @@ export default class Table extends React.Component {
                     search={this.state.search} ascending={this.state.ascending}
                     menuOpen={this.state.menuOpen} active={this.state.active} handleTextChange={this.handleTextChange}
                     resetText={this.resetText} openRoleMenu={this.openRoleMenu} selectRole={this.selectRole}
-                    swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus} role={this.state.roles}
+                    swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus} role={this.state.role}
                 />
                 <div className="row mx-0">
-                    {this.state.champions.map(champion =>
+                    {this.state.champions.map((champion, i) =>
                         <Card key={champion.shortname} name={champion.name}
                             icon={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + champion.shortname + ".png"}
                             roles={champion.roles.join(', ')} rating={champion.score.toFixed(2)} page="main"

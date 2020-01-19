@@ -30,7 +30,7 @@ export default class Search extends React.Component {
                     value={this.props.search}
                     onFocus={this.reset}
                     onBlur={this.resetFocus}
-                    placeholder="Search by name"
+                    placeholder="Search by name..."
                 />
             </div>
         );

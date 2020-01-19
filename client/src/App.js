@@ -8,7 +8,7 @@ export default class App extends React.Component {
     render() {
         return (
             <>
-                <div className="bg-dark py-2 px-4 w-100 text-white font-weight-bold top-bar">
+                <div className="py-2 px-4 w-100 text-white font-weight-bold top-bar">
                     <a href="/" style={{ color: "white" }}>
                         champs.gg
                     </a>

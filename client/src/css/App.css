@@ -1,5 +1,5 @@
 body {
-    background: #eee !important;
+    background: rgb(243, 243, 243) !important;
     overflow-y: scroll; /* has to be scroll, not auto */
     -webkit-overflow-scrolling: touch;
     
@@ -13,4 +13,8 @@ body {
 .footer {
     background: #e0e0e0;
     box-shadow: 0px 1000px 0px 1000px #e0e0e0;
+}
+
+.top-bar {
+    background: #343A40;
 }
