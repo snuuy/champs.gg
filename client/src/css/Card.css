@@ -62,9 +62,9 @@
   }
 
   .champ-rating-voted:hover {
-    background-color: #e2e2e2;
+    background-color: #736f6f;
     color:white;
-    border:3px solid #e2e2e2;
+    border:3px solid #736f6f;
   }
   
   @keyframes spin {
