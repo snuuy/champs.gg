@@ -55,7 +55,7 @@ export default class ChampionPage extends React.Component {
                     </div>
                     <div className="bg-white">
                         <div className="row px-4 py-3 my-auto">
-                            <div className="col-12 col-lg-6 col-xl-5 mb-3 mb-lg-0">
+                            <div className="col-12 col-lg-6 col-xl-5 mb-3 mb-lg-auto my-auto">
                                 <div className="d-inline-block align-middle">
                                     <img
                                         className="mr-3 champ-img"

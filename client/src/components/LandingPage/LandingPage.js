@@ -3,6 +3,7 @@ import Table from './Table';
 import Logo from '../../assets/logo.png'
 
 export default class LandingPage extends React.Component {
+
     render() {
         return (
             <div className="container">

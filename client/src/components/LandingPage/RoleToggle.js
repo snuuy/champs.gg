@@ -19,7 +19,7 @@ export default class RoleToggle extends React.Component {
         const roles = ["All Roles", "Top", "Mid", "Jungle", "Support", "Bot"]
         return (
             <>
-                <select className="align-middle p-1" onChange={(e) => this.selectRole(e.target.value)}>
+                <select className="custom-select align-middle pl-2 py-1 pr-5" onChange={(e) => this.selectRole(e.target.value)}>
                     {
                         roles.map((role, i) =>
                             <option key={role} value={role} name="role">{role}</option>
