@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../css/RoleButton.css';
 
 export default class RoleButton extends React.Component {
     constructor(props) {
