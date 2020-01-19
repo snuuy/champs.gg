@@ -49,6 +49,7 @@ phases:
 artifacts:
   files:
     - 'client/build/*'
+  base-directory: 'client/build'
     # - location
   #name: $(date +%Y-%m-%d)
   #discard-paths: yes
