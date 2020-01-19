@@ -1,8 +1,7 @@
 import React from 'react';
-import Search from '../LandingPage/Search.js'
 import RatingToggle from '../LandingPage/RatingToggle'
-import RoleToggle from '../LandingPage/RoleToggle'
-
+import ShowMoreText from 'react-show-more-text';
+import AutoLinker from 'autolinker';
 export default class CountersTable extends React.Component {
 
     constructor(props) {
@@ -15,6 +14,7 @@ export default class CountersTable extends React.Component {
         }
         this.state = {
             counters: this.props.counters,
+            contributorName: this.props.contributorName,
             roleCounters: roleCounters,
             visibleCounters: roleCounters,
             roles: roles,
@@ -51,11 +51,11 @@ export default class CountersTable extends React.Component {
 
 
     render() {
-        let { roles, visibleCounters, selectedRole } = this.state;
+        let { roles, visibleCounters, contributorName } = this.state;
         return (
             <div>
                 <div className="row bg-light py-2 text-center border-top border-bottom search-bar">
-                    <div className="col-md-3 col-12 my-auto">
+                    <div className="col-lg-3 col-7 my-auto">
                         <div className="form-group has-search my-auto">
                             <span className="fa fa-search form-control-feedback"></span>
                             <input className="d-inline-block search-input form-control" type="text"
@@ -67,7 +67,7 @@ export default class CountersTable extends React.Component {
                             />
                         </div>
                     </div>
-                    <div className="col-6 my-auto d-md-block d-none">
+                    <div className="col-5 col-lg-6 my-auto">
                         <div className="d-inline-block text-muted mr-2 align-middle font-weight-bold">Role</div>
                         <select className="align-middle" onChange={(e) => this.selectRole(e.target.value)}>
                             {
@@ -85,22 +85,28 @@ export default class CountersTable extends React.Component {
                             text="Rating " />
                     </div>
                 </div>
-                <div className="row bg-white text-dark py-2 border-bottom font-weight-bold text-uppercase">
-                    <div className="col-3">
+                <div className="row bg-white text-dark py-2 border-bottom font-weight-bold text-uppercase d-none d-md-flex">
+                    <div className="col-lg-3 col-md-4">
                         Champion
                     </div>
-                    <div className="col-1">
+                    <div className="col-2">
                         Difficulty
+                        <i
+                            className="fas fa-info-circle text-muted pl-2"
+                            data-tip="A higher number indicates a more difficult matchup"></i>
                     </div>
-                    <div className="col-8 text-center">
+                    <div className="col-lg-7 col-md-5 text-center">
                         Comments
+                        <i
+                            className="fas fa-info-circle text-muted pl-2"
+                            data-tip={"Opinions are provided by " + contributorName}></i>
                     </div>
                 </div>
                 {
                     visibleCounters.map((counter, i) =>
                         <div className="row bg-white border-bottom mt-0 py-2">
 
-                            <div className="col-3 my-auto">
+                            <div className="col-lg-3 col-md-4 col-10 my-auto">
                                 <a href={"/" + counter.champion.shortname}>
                                     <div className="d-inline-block align-middle">
                                         <img
@@ -115,11 +121,20 @@ export default class CountersTable extends React.Component {
                                     </div>
                                 </a>
                             </div>
-                            <div className="col-1 align-middle h2 my-auto text-center">
+                            <div className="col-md-1 col-2 align-middle h2 my-auto text-center difficulty-font">
                                 {counter.difficulty}
                             </div>
-                            <div className="col-8 pl-3 my-auto">
-                                {counter.comments}
+                            <div className="col-lg-8 col-md-7 pl-3 my-auto pt-2 pt-md-0 comments-text">
+                                {counter.comments ?
+                                    <ShowMoreText
+                                        lines={2}
+                                        more={<span className="small">Show more</span>}
+                                        less={<span className="small">Show less</span>}
+                                        expanded={false}
+                                    >
+                                        {AutoLinker.link(counter.comments)}
+                                    </ShowMoreText>
+                                    : <></>}
                             </div>
                         </div>
                     )

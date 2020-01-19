@@ -12,10 +12,10 @@
 
   .champ-splash {
       box-shadow: inset 0px 0px 0px 500px rgba(0,0,0,0.3);
-      background-position: center top;
+      background-position: center -20px;
       background-size: 100% auto;
       background-repeat: no-repeat;
-      height: 350px;
+      height: 320px;
   }
 
   .tier-big {
@@ -42,4 +42,13 @@
   .champ-name:hover {
       text-decoration: underline;
       color:black !important;
+  }
+
+  .difficulty-font {
+      font-family: 'Courier New Header', Courier Header, monospace;
+      font-weight: bold;
+  }
+
+  .comments-text {
+      font-size: 15px;
   }
