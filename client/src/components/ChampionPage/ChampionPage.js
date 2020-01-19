@@ -76,7 +76,7 @@ export default class ChampionPage extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-12 col-lg-6 col-xl-7">
+                            <div className="col-12 col-lg-6 col-xl-7 mt-3 mt-lg-0">
                                 <Contributor champion={champion.name} info={champion.contributors[0]} />
                             </div>
                         </div>

@@ -71,7 +71,7 @@ export default class CountersTable extends React.Component {
                     </div>
                     <div className="col-5 col-md-5 my-auto text-right">
                         <div className="d-inline-block text-muted mr-2 align-middle font-weight-bold">Role</div>
-                        <select className="custom-select pl-2 py-1 pr-5 align-middle w-auto" onChange={(e) => this.selectRole(e.target.value)}>
+                        <select className="custom-select pl-2 py-1 pr-md-5 pr-sm-4 align-middle d-inline-block w-auto" onChange={(e) => this.selectRole(e.target.value)}>
                             {
                                 roles.map((role, i) =>
                                     <option key={i} value={role.toLowerCase()} name="role">{role}</option>
@@ -108,7 +108,7 @@ export default class CountersTable extends React.Component {
                     visibleCounters.map((counter, i) =>
                         <div key={i} className="row bg-white border-bottom mt-0 py-2">
 
-                            <div className="col-lg-3 col-md-4 col-10 my-auto">
+                            <div className="col-lg-3 col-md-4 col-9 my-auto">
                                 <a href={"/" + counter.champion.shortname}>
                                     <div className="d-inline-block align-middle">
                                         <img
@@ -123,7 +123,7 @@ export default class CountersTable extends React.Component {
                                     </div>
                                 </a>
                             </div>
-                            <div className="col-md-1 col-2 align-middle h2 my-auto text-center difficulty-font">
+                            <div className="col-md-1 col-3 align-middle h2 my-auto text-center difficulty-font">
                                 {counter.difficulty}
                             </div>
                             <div className="col-lg-8 col-md-7 pl-3 my-auto pt-2 pt-md-0 comments-text text-dark">
