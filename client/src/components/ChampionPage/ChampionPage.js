@@ -25,6 +25,7 @@ export default class ChampionPage extends React.Component {
                 const response = JSON.parse(event.target.responseText);
                 console.log(response)
                 this.setState({ champion: response, loading: false })
+                document.title = response.name;
             }
             if (event.target.status === 400) {
                 //alert("champion not found")

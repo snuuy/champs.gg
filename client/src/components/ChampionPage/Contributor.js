@@ -34,7 +34,7 @@ export default class Contributor extends React.Component {
                         </div>
                     </div>
                     <div className="text-dark small py-0 my-0 overflow-hidden d-block p-3 p-md-0">
-                        {info.bio + " " + info.message}
+                        {info.bio + " "} {info.message ? info.message : ""}
                     </div>
                 </div>
             </div>
