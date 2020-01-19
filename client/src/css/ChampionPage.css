@@ -11,7 +11,7 @@
   }
 
   .champ-splash {
-      box-shadow: inset 0px 0px 0px 500px rgba(0,0,0,0.3);
+      box-shadow: inset 0px 0px 0px 500px rgba(0,0,0,0.15);
       background-position: center -35px;
       background-size: 100% auto;
       background-repeat: no-repeat;
