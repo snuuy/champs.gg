@@ -14,7 +14,8 @@ let contributorSchema = new mongoose.Schema({
   discord: String,
   bio: String,
   portrait: String,
-  message: String
+  message: String,
+  comments: String
 });
 
 let championSchema = new mongoose.Schema({

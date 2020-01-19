@@ -1,11 +1,11 @@
 import React from 'react';
 export default class Contributor extends React.Component {
     render() {
-        let { info } = this.props;
+        let { info, champion } = this.props;
         if (!info) {
             return (
                 <div className="text-muted py-auto my-auto py-5">
-                    No contributor
+                    We don't currently have information for {champion}. If you are or know an expert at {champion} and would like to contribute your opinions, please email us at champsdotgg@gmail.com.
                 </div>
             )
         }
@@ -14,7 +14,7 @@ export default class Contributor extends React.Component {
                 <div className="w-100">
                     <img className="contrib-portrait float-left mr-3 ml-3" src={info.portrait} />
                     <span className="d-block text-muted small text-uppercase mb-1" style={{ marginTop: "-3px" }}>
-                        Contributed by
+                        Opinions by
                     </span>
                     <div className="contrib-name">
                         {info.name}

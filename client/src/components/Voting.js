@@ -51,7 +51,7 @@ export default class Voting extends React.Component {
         let { isCard } = this.props;
         return (
             <ul className="list-group list-group-flush">
-                <li className={"list-group-item " + (isCard ? "border-top" : "")}>
+                <li className="list-group-item border-top" >
                     <div className="row">
                         <div className={"col-2 " + (isCard ? "" : "pl-0")}>
                             <div className={"champ-rating-solid rating-" + this.ratingToTier(this.state.rating)}>

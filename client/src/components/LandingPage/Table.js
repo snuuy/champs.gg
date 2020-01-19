@@ -131,7 +131,7 @@ export default class Table extends React.Component {
             )
         }
         return (
-            <div class="table">
+            <div className="table">
                 <Header
                     search={this.state.search} roles={this.state.roles} ascending={this.state.ascending}
                     menuOpen={this.state.menuOpen} active={this.state.active} handleTextChange={this.handleTextChange}
