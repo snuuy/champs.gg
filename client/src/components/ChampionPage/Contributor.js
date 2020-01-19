@@ -10,7 +10,7 @@ export default class Contributor extends React.Component {
             )
         }
         return (
-            <div className="row">
+            <div className="bg-light py-3 rounded" style={{ minHeight: "150px" }}>
                 <div className="w-100">
                     <img className="contrib-portrait float-left mr-3 ml-3" src={require('../../assets/contributors/' + info.name + '.jpg')} />
                     <span className="d-block text-muted small text-uppercase mb-1" style={{ marginTop: "-3px" }}>
