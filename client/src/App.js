@@ -13,7 +13,7 @@ export default class App extends React.Component {
                         champs.gg
                     </a>
                     <div className="float-right text-white">
-                        <span className="small">Version</span> 10.1
+                        <span className="small">Patch</span> 10.1
                     </div>
                 </div>
                 <BrowserRouter>
