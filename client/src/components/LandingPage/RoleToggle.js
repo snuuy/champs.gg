@@ -22,7 +22,7 @@ export default class RoleToggle extends React.Component {
                 <select className="align-middle p-1" onChange={(e) => this.selectRole(e.target.value)}>
                     {
                         roles.map((role, i) =>
-                            <option key={i} value={role} name="role">{role}</option>
+                            <option key={role} value={role} name="role">{role}</option>
                         )
                     }
                 </select>

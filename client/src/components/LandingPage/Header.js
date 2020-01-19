@@ -8,7 +8,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <>
-                <div className="row bg-light rounded py-2 text-center border mb-2 mx-2">
+                <div className="row bg-white rounded py-2 text-center border mb-2 mx-0 col-lg-8 col-12 mx-lg-auto">
                     <div className="col-md-6 col-12 my-auto text-md-left text-center">
                         <Search
                             search={this.props.search}
@@ -16,7 +16,7 @@ export default class Header extends React.Component {
                             resetText={this.props.resetText}
                             resetTextOffFocus={this.props.resetTextOffFocus} />
                     </div>
-                    <div className="col-md-6 col-12 my-auto text-md-right text-left mt-3 mt-md-0">
+                    <div className="col-md-6 col-12 text-md-right text-left my-md-auto mt-md-auto mt-3">
                         <div className="d-inline-block mr-2 align-middle">
                             <RoleToggle
                                 role={this.props.role}
