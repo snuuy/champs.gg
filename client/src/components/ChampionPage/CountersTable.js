@@ -19,7 +19,7 @@ export default class CountersTable extends React.Component {
             visibleCounters: roleCounters,
             roles: roles,
             selectedRole: this.props.roles[0],
-            search: null
+            search: ""
         }
         this.selectRole = this.selectRole.bind(this);
         this.search = this.search.bind(this);
@@ -74,8 +74,8 @@ export default class CountersTable extends React.Component {
                         <div className="d-inline-block text-muted mr-2 align-middle font-weight-bold">Role</div>
                         <select className="align-middle" onChange={(e) => this.selectRole(e.target.value)}>
                             {
-                                roles.map(role =>
-                                    <option value={role.toLowerCase()} name="role">{role}</option>
+                                roles.map((role, i) =>
+                                    <option key={i} value={role.toLowerCase()} name="role">{role}</option>
                                 )
                             }
                         </select>
@@ -107,7 +107,7 @@ export default class CountersTable extends React.Component {
                 </div>
                 {
                     visibleCounters.map((counter, i) =>
-                        <div className="row bg-white border-bottom mt-0 py-2">
+                        <div key={i} className="row bg-white border-bottom mt-0 py-2">
 
                             <div className="col-lg-3 col-md-4 col-10 my-auto">
                                 <a href={"/" + counter.champion.shortname}>

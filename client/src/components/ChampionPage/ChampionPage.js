@@ -62,7 +62,7 @@ export default class ChampionPage extends React.Component {
                                         alt={champion.name}
                                     />
                                 </div>
-                                <div class="d-inline-block align-middle">
+                                <div className="d-inline-block align-middle">
                                     <div className="h1 font-weight-bold text-dark mb-0 pb-0">{champion.name}</div>
                                     <div className="ml-1 mb-2 small text-uppercase text-muted align-middle">{champion.roles.join(', ')}</div>
                                     <hr className="mb-2 mt-1 pl-2" />

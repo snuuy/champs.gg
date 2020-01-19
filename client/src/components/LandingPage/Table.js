@@ -9,7 +9,7 @@ export default class Table extends React.Component {
         this.state = {
             loading: true,
             search: '',
-            roles: 'All',
+            roles: 'All Roles',
             ascending: true,
             menuOpen: false,
             active: '↓',
