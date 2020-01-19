@@ -2,7 +2,10 @@ body {
     background: rgb(243, 243, 243) !important;
     overflow-y: scroll; /* has to be scroll, not auto */
     -webkit-overflow-scrolling: touch;
-    
+    overflow-x: hidden;
+}
+html {
+    overflow-x: hidden;
 }
 #logo {
     color: #2571B3;
