@@ -9,8 +9,8 @@ export default class Table extends React.Component {
         this.state = {
             loading: true,
             search: '',
-            roles: 'All Roles',
-            ascending: false,
+            roles: 'All',
+            ascending: true,
             menuOpen: false,
             active: '↓',
             champions: [],
@@ -133,10 +133,10 @@ export default class Table extends React.Component {
         return (
             <div className="table">
                 <Header
-                    search={this.state.search} roles={this.state.roles} ascending={this.state.ascending}
+                    search={this.state.search} ascending={this.state.ascending}
                     menuOpen={this.state.menuOpen} active={this.state.active} handleTextChange={this.handleTextChange}
                     resetText={this.resetText} openRoleMenu={this.openRoleMenu} selectRole={this.selectRole}
-                    swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus}
+                    swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus} role={this.state.roles}
                 />
                 <div className="row mx-0">
                     {this.state.champions.map(champion =>

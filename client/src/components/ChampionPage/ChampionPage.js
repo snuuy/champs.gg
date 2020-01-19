@@ -93,9 +93,11 @@ export default class ChampionPage extends React.Component {
                     <div className="mx-3">
                         {champion.counters.length > 0 && champion.contributors.length > 0 ?
                             <>
-                                {/* <div className="row bg-light py-2 border-top ">
-                                    <div className="font-weight-bold mx-auto">Matchups with {champion.name}</div>
-                                </div> */}
+                                {champion.contributors[0].comments ?
+                                    <div className="row bg-light py-2 border-top text-dark" style={{ fontSize: "15px" }}>
+                                        <div className="px-4">{champion.contributors[0].comments}</div>
+                                    </div>
+                                    : <></>}
                                 <CountersTable
                                     contributorName={champion.contributors[0].name}
                                     counters={champion.counters}
@@ -104,12 +106,6 @@ export default class ChampionPage extends React.Component {
                             </>
                             : <></>}
                     </div>
-                    <p className="riot text-center small my-4">
-                        champs.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games
-                    or anyone <br /> officially involved in producing or managing League of Legends. League of Legends
-                    and Riot Games are <br /> trademarks or registered trademarks of Riot Games, Inc. League of Legends
-                                                                                                                                                                                                                                                                                            © Riot Games, Inc.
-                </p>
                 </div >
             </>
         );
