@@ -52,11 +52,12 @@
   .comments-text {
       font-size: 15px;
   }
-  @media only screen and (max-width: 400px) {
-  .champ-img {
-    max-width: 78px;
-  }
-  }
+  @media only screen and (max-width: 420px) {
+    .champ-img {
+      max-width: 78px;
+    }
+    }
+  
 
   @media only screen and (max-width: 1024px) {
     .champ-name {
