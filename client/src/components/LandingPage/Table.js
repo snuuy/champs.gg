@@ -27,7 +27,7 @@ export default class Table extends React.Component {
 
     componentDidMount() {
         var request = new XMLHttpRequest();
-        request.open("GET", "/api/champion/all");
+        request.open("GET", "https://api.champs.gg/api/champion/all");
         request.send();
         request.onreadystatechange = event => {
             if (event.target.readyState === 4 && event.target.status === 200 && event.target.responseText) {

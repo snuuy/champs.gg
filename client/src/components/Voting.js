@@ -30,7 +30,7 @@ export default class Voting extends React.Component {
         voteLoading[rating - 1] = true;
         this.setState({ voteLoading });
         var request = new XMLHttpRequest();
-        request.open("POST", "/api/vote/champion");
+        request.open("POST", "https://api.champs.gg/api/vote/champion");
         request.setRequestHeader('Content-type', 'application/json');
         request.send(JSON.stringify({
             championId: this.props.champId,

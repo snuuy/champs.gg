@@ -15,33 +15,6 @@ export default class Card extends React.Component {
         };
     }
 
-    vote(rating) {
-        if (rating == this.state.userVote) return;
-        let { voteLoading } = this.state;
-        voteLoading[rating - 1] = true;
-        this.setState({ voteLoading });
-        var request = new XMLHttpRequest();
-        request.open("POST", "/api/vote/champion");
-        request.setRequestHeader('Content-type', 'application/json');
-        request.send(JSON.stringify({
-            championId: this.props.champId,
-            score: rating
-        }));
-        request.onreadystatechange = event => {
-            if (event.target.readyState === 4) {
-                voteLoading[rating - 1] = false;
-                this.setState({ voteLoading });
-                this.setState({ userVote: rating })
-                if (event.target.status === 200) {
-
-                }
-                else {
-                    alert(event.target.responseText)
-                }
-            }
-        }
-    }
-
     render() {
         return (
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-12 px-2 my-2">

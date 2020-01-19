@@ -18,7 +18,7 @@ export default class ChampionPage extends React.Component {
 
     componentDidMount() {
         var request = new XMLHttpRequest();
-        request.open("GET", "/api/champion/" + this.props.match.params.id);
+        request.open("GET", "https://api.champs.gg/api/champion/" + this.props.match.params.id);
         request.send();
         request.onreadystatechange = event => {
             if (event.target.readyState === 4 && event.target.status === 200 && event.target.responseText) {
