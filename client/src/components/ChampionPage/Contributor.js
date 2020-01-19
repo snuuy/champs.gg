@@ -20,15 +20,15 @@ export default class Contributor extends React.Component {
                         {info.name}
                         <div className="socials h4 d-inline-block ml-3">
                             {info.twitter ?
-                                <a href={info.twitter}><i className="fab fa-twitter pr-1"></i></a> : <></>}
+                                <a href={info.twitter} target="_blank"><i className="fab fa-twitter pr-1"></i></a> : <></>}
                             {info.twitch ?
-                                <a href={info.twitch}><i className="fab fa-twitch pr-1"></i></a> : <></>}
+                                <a href={info.twitch} target="_blank"><i className="fab fa-twitch pr-1"></i></a> : <></>}
                             {info.instagram ?
-                                <a href={info.instagram}><i className="fab fa-instagram pr-1"></i></a> : <></>}
+                                <a href={info.instagram} target="_blank"><i className="fab fa-instagram pr-1"></i></a> : <></>}
                             {info.facebook ?
-                                <a href={info.facebook}><i className="fab fa-facebook pr-1"></i></a> : <></>}
+                                <a href={info.facebook} target="_blank"><i className="fab fa-facebook pr-1"></i></a> : <></>}
                             {info.opgg ?
-                                <a href={info.opgg}><i className="fas fa-user pr-1"></i></a> : <></>}
+                                <a href={info.opgg} target="_blank"><i className="fas fa-user pr-1"></i></a> : <></>}
                         </div>
                     </div>
                     <div className="text-dark small py-0 my-0 overflow-hidden">
