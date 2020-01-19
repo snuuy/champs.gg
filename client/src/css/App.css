@@ -1,4 +1,4 @@
-body,html {
+body {
     background: #eee !important;
     overflow-y: scroll; /* has to be scroll, not auto */
     -webkit-overflow-scrolling: touch;
@@ -8,8 +8,4 @@ body,html {
     color: #2571B3;
     font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-weight: bold;
-}
-
-.top-bar {
-    background: #c4a32d !important;
 }
