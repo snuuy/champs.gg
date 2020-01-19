@@ -1,7 +1,6 @@
 import React from 'react';
 import RatingToggle from '../LandingPage/RatingToggle'
 import ShowMoreText from 'react-show-more-text';
-import AutoLinker from 'autolinker';
 export default class CountersTable extends React.Component {
 
     constructor(props) {
@@ -135,7 +134,7 @@ export default class CountersTable extends React.Component {
                                         less={<span className="small">Show less</span>}
                                         expanded={false}
                                     >
-                                        {AutoLinker.link(counter.comments)}
+                                        {counter.comments}
                                     </ShowMoreText>
                                     : <></>}
                             </div>

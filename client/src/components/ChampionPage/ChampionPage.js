@@ -3,6 +3,7 @@ import CountersTable from './CountersTable'
 import Voting from '../Voting'
 import Contributor from './Contributor'
 import Tooltip from 'react-tooltip'
+import Linkify from 'react-linkify';
 import '../../css/ChampionPage.css'
 import '../../css/Card.css'
 export default class ChampionPage extends React.Component {
@@ -85,7 +86,7 @@ export default class ChampionPage extends React.Component {
                             <>
                                 {champion.contributors[0].comments ?
                                     <div className="row bg-light py-2 border-top text-dark" style={{ fontSize: "15px" }}>
-                                        <div className="px-4">{champion.contributors[0].comments}</div>
+                                        <div className="px-4"><Linkify>{champion.contributors[0].comments}</Linkify></div>
                                     </div>
                                     : <></>}
                                 <CountersTable
