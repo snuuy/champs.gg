@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactGA from 'react-ga';
 import CountersTable from './CountersTable'
 import Voting from '../Voting'
 import Contributor from './Contributor'
@@ -18,7 +17,6 @@ export default class ChampionPage extends React.Component {
     }
 
     componentDidMount() {
-        ReactGA.pageview("/" + this.props.match.param.id)
         var request = new XMLHttpRequest();
         request.open("GET", "https://api.champs.gg/api/champion/" + this.props.match.params.id);
         request.send();

@@ -1,15 +1,10 @@
 import React from 'react';
-import ReactGA from 'react-ga';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LandingPage from './components/LandingPage/LandingPage';
 import ChampionPage from './components/ChampionPage/ChampionPage';
 import './css/App.css';
 
 export default class App extends React.Component {
-    componentDidMount() {
-        ReactGA.initialize("UA-156512368-1");
-    }
-
     render() {
         return (
             <>
@@ -35,8 +30,8 @@ export default class App extends React.Component {
                         and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends
                                                                                                                         © Riot Games, Inc.
                 </p>
-                        <p className="text-dark small text-center mt-3 mb-4">Contact: <b>champsdotgg@gmail.com</b><br />
-                            © 2020 champs.gg. All rights reserved.</p>
+                        <p className="text-dark small text-center mt-3 mb-4">Contact: <b>champsdotgg@gmail.com</b><br/>
+                        © 2020 champs.gg. All rights reserved.</p>
                     </div>
                 </div>
             </>

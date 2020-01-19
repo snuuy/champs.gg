@@ -1,12 +1,8 @@
 import React from 'react';
 import Table from './Table';
 import Logo from '../../assets/logo.png'
-import ReactGA from 'react-ga'
-export default class LandingPage extends React.Component {
 
-    componentDidMount() {
-        ReactGA.pageview("/")
-    }
+export default class LandingPage extends React.Component {
 
     render() {
         return (
