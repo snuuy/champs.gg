@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../css/RoleToggle.css';
 
 export default class RoleToggle extends React.Component {
     constructor(props) {
