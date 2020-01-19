@@ -30,7 +30,8 @@ export default class App extends React.Component {
                         and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends
                                                                                                                         © Riot Games, Inc.
                 </p>
-                        <p className="text-dark small text-center mt-3 mb-4">Contact: <b>champsdotgg@gmail.com</b></p>
+                        <p className="text-dark small text-center mt-3 mb-4">Contact: <b>champsdotgg@gmail.com</b><br/>
+                        © 2020 champs.gg. All rights reserved.</p>
                     </div>
                 </div>
             </>
