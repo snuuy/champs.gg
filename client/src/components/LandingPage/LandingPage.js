@@ -7,7 +7,7 @@ export default class LandingPage extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="text-center my-md-5 my-2 pt-2">
+                <div className="text-center my-md-5 my-3 pt-2">
                     <span className="display-4 h1" id="logo">
                         <img src={Logo} style={{ width: "350px" }} />
                     </span>
