@@ -48,7 +48,7 @@ phases:
     #file-format: JunitXml | CucumberJson
 artifacts:
   files:
-    - '/client/build'
+    - 'client/build'
     # - location
   #name: $(date +%Y-%m-%d)
   #discard-paths: yes
