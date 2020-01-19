@@ -29,8 +29,6 @@ phases:
     #commands:
       # - command
       # - command
-  install:
-    nodejs: 10
   build:
     commands: 
       - npm run client
