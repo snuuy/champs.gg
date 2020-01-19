@@ -11,8 +11,6 @@ export default class LandingPage extends React.Component {
                     <span className="display-4 h1" id="logo">
                         <img src={Logo} style={{ width: "350px" }} />
                     </span>
-                    <p className="instructions">Click on a champion to see their matchups. 
-                        Vote on their general strength using oneof the 5 tier buttons.</p>
                 </div>
                 <div>
                     <Table />
