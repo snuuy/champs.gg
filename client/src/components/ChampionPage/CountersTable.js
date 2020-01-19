@@ -71,7 +71,7 @@ export default class CountersTable extends React.Component {
                     </div>
                     <div className="col-5 col-md-5 my-auto text-right">
                         <div className="d-inline-block text-muted mr-2 align-middle font-weight-bold">Role</div>
-                        <select className="custom-select align-middle pl-2 py-1 pr-5 align-middle" onChange={(e) => this.selectRole(e.target.value)}>
+                        <select className="custom-select pl-2 py-1 pr-5 align-middle w-auto" onChange={(e) => this.selectRole(e.target.value)}>
                             {
                                 roles.map((role, i) =>
                                     <option key={i} value={role.toLowerCase()} name="role">{role}</option>

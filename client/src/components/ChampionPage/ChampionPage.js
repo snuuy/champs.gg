@@ -50,7 +50,7 @@ export default class ChampionPage extends React.Component {
                         style={{ backgroundImage: "url('https://lolstatic-a.akamaihd.net/game-info/1.1.9/images/champion/backdrop/bg-" + champion.shortname.toLowerCase() + ".jpg')" }}
                     >
                         <div style={{ position: "absolute", left: "25px", bottom: "25px" }}>
-                            <a href="/"><div className="btn btn-sm btn-light"><i className="fas fa-arrow-left"></i> All Champions</div></a>
+                            <a href="/"><div className="btn btn-sm btn-light"><i className="fas fa-arrow-left pr-1"></i> All Champions</div></a>
                         </div>
                     </div>
                     <div className="bg-white">
