@@ -23,7 +23,9 @@ fs.readdir("../spreadsheets/", (err, files) => {
         if (metadata.getCell('B8').value) contributor.discord = metadata.getCell('B8').value.text;
         if (metadata.getCell('B9').value) contributor.portrait = metadata.getCell('B9').value.text;
         if (metadata.getCell('B10').value) contributor.bio = metadata.getCell('B10').value;
-        if (metadata.getCell('B11').value) contributor.message = metadata.getCell('B11').value;
+        if (metadata.getCell('B11').value)
+          contributor.message = metadata.getCell('B11').value.hyperlink ?
+            metadata.getCell('B11').value.text : metadata.getCell('B11').value
         if (metadata.getCell('B12').value) contributor.comments = metadata.getCell('B12').value;
         if (metadata.getCell('B13').value) contributor.instagram = metadata.getCell('B13').value.text;
         if (metadata.getCell('B14').value) contributor.facebook = metadata.getCell('B14').value.text;
