@@ -1,5 +1,8 @@
-html {
+body {
     background: rgb(243, 243, 243) !important;
+}
+
+html {
     overflow-y: scroll; /* has to be scroll, not auto */
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
