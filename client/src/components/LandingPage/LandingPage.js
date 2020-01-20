@@ -15,7 +15,7 @@ export default class LandingPage extends React.Component {
         return (
             <div className="container">
                 <MetaTags>
-                    <title>champs.gg - matchups, counters, and tier list for Season 10 - League of Legends</title>
+                    <title>champs.gg - Matchups, Counters, and Tier List for Season 10 - League of Legends</title>
                     <meta name="description" 
                         content="counters lane matchups tier list challenger league of legends lol 
                         guide season 10 best champions climbing"/>
