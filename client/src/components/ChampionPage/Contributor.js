@@ -25,6 +25,8 @@ export default class Contributor extends React.Component {
                                     <a href={info.twitter} target="_blank"><i className="fab fa-twitter pr-1"></i></a> : <></>}
                                 {info.twitch ?
                                     <a href={info.twitch} target="_blank"><i className="fab fa-twitch pr-1"></i></a> : <></>}
+                                {info.youtube ?
+                                    <a href={info.youtube} target="_blank"><i className="fab fa-youtube pr-1"></i></a> : <></>}
                                 {info.instagram ?
                                     <a href={info.instagram} target="_blank"><i className="fab fa-instagram pr-1"></i></a> : <></>}
                                 {info.facebook ?
