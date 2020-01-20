@@ -49,7 +49,7 @@ export default class ChampionPage extends React.Component {
                 <Tooltip />
                 <MetaTags>
                     <title>{champion.name + " Matchups and Counters Season 10"} </title>
-                    <meta name="description" content={champion.name + " counters lane matchups season 10 challenger league of legends lol guide"}/>
+                    <meta name="description" content={champion.name + " lane matchups and counters for season 10 League of Legends, provided by challenger players."}/>
                 </MetaTags>
                 <div className="container p-0 p-md-3 mt-lg-3">
                     <div
