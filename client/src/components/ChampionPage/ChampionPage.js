@@ -5,6 +5,7 @@ import Voting from '../Voting'
 import Contributor from './Contributor'
 import Tooltip from 'react-tooltip'
 import Linkify from 'react-linkify';
+import MetaTags from 'react-meta-tags';
 import '../../css/ChampionPage.css'
 import '../../css/Card.css'
 export default class ChampionPage extends React.Component {
@@ -27,7 +28,6 @@ export default class ChampionPage extends React.Component {
                 const response = JSON.parse(event.target.responseText);
                 console.log(response)
                 this.setState({ champion: response, loading: false })
-                document.title = response.name;
             }
             if (event.target.status === 400) {
                 //alert("champion not found")
@@ -47,6 +47,10 @@ export default class ChampionPage extends React.Component {
         return (
             <>
                 <Tooltip />
+                <MetaTags>
+                    <title>{champion.name + " Matchups and Counters Season 10"} </title>
+                    <meta name="description" content={champion.name + " counters lane matchups season 10 challenger league of legends lol guide"}/>
+                </MetaTags>
                 <div className="container p-0 p-md-3 mt-lg-3">
                     <div
                         className="champ-splash position-relative w-100 d-none d-md-block rounded-top"
