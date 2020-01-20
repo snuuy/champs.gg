@@ -27,7 +27,7 @@ export default class Table extends React.Component {
 
     componentDidMount() {
         var request = new XMLHttpRequest();
-        request.open("GET", "https://api.champs.gg/api/champion/all");
+        request.open("GET", "/api/champion/all");
         request.send();
         request.onreadystatechange = event => {
             if (event.target.readyState === 4 && event.target.status === 200 && event.target.responseText) {
@@ -138,6 +138,9 @@ export default class Table extends React.Component {
                     resetText={this.resetText} openRoleMenu={this.openRoleMenu} selectRole={this.selectRole}
                     swapRating={this.swapRating} page="main" resetTextOffFocus={this.resetTextOffFocus} role={this.state.role}
                 />
+                <div className="py-2 text-muted text-center" style={{ fontSize: "14px" }}>
+                    Click on a champion to see their matchups. Vote on a champion's general strength by clicking one of the five tier buttons on their card.
+                </div>
                 <div className="row mx-0">
                     {this.state.champions.map((champion, i) =>
                         <Card key={champion.shortname} name={champion.name}
