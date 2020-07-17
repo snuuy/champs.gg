@@ -3,6 +3,8 @@ const Excel = require("exceljs")
 const path = require("path");
 const fs = require("fs");
 
+/* This script takes excel files and uploads all important data to the database */
+
 fs.readdir("../spreadsheets/", (err, files) => {
   if (err) console.log(err);
 
@@ -43,7 +45,6 @@ fs.readdir("../spreadsheets/", (err, files) => {
             Champion.findOne({ name: row.getCell('A').value }, (err, champ) => {
               if (err) console.log(err)
               if (champ == null) {
-                //console.log(row.getCell('A').value, row, file);
                 return;
               }
               counterChamp.champion = champ._id

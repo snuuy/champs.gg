@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../css/Search.css';
 
+/* This simple component allows users to query for champions */
+
 export default class Search extends React.Component {
     constructor(props) {
         super(props);

@@ -1,8 +1,10 @@
 import React from 'react';
 import RatingToggle from '../LandingPage/RatingToggle'
 import ShowMoreText from 'react-show-more-text';
-export default class CountersTable extends React.Component {
 
+/* This component is the table on each champion page, which displays information for all matchups */
+
+export default class CountersTable extends React.Component {
     constructor(props) {
         super(props)
         let roleCounters = this.props.counters[0].champions;
@@ -28,6 +30,7 @@ export default class CountersTable extends React.Component {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    // A given champion may be played in multiple roles, and each role has completely different matchups
     selectRole(role) {
         this.setState({ selectedRole: role })
         for (let c of this.state.counters) {
@@ -46,8 +49,6 @@ export default class CountersTable extends React.Component {
         let filtered = this.state.roleCounters.filter(counter => counter.champion.name.toUpperCase().includes(text.toUpperCase()));
         this.setState({ visibleCounters: filtered })
     }
-
-
 
     render() {
         let { roles, visibleCounters, contributorName } = this.state;
@@ -114,7 +115,8 @@ export default class CountersTable extends React.Component {
                                         <img
                                             className="mr-3"
                                             style={{ width: "50px", height: "50px" }}
-                                            src={"https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + counter.champion.shortname + ".png"}
+                                            src={/* Official Riot API for champion images */
+                                                "https://ddragon.leagueoflegends.com/cdn/10.1.1/img/champion/" + counter.champion.shortname + ".png"}
                                             alt={counter.champion.name}
                                         />
                                     </div>

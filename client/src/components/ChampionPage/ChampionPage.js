@@ -8,6 +8,9 @@ import Linkify from 'react-linkify';
 import MetaTags from 'react-meta-tags';
 import '../../css/ChampionPage.css'
 import '../../css/Card.css'
+
+/* This file is each individual champion page (There are 147). */
+
 export default class ChampionPage extends React.Component {
 
     constructor(props) {
@@ -18,6 +21,7 @@ export default class ChampionPage extends React.Component {
         };
     }
 
+    // Make call to API to retrieve all neccesary data for given champion
     componentDidMount() {
         ReactGA.pageview("/" + this.props.match.params.id)
         var request = new XMLHttpRequest();
@@ -29,9 +33,7 @@ export default class ChampionPage extends React.Component {
                 console.log(response)
                 this.setState({ champion: response, loading: false })
             }
-            if (event.target.status === 400) {
-                //alert("champion not found")
-            }
+        // No big deal if the request is not a success - this is accounted for in the other files
         }
     }
 
@@ -46,7 +48,7 @@ export default class ChampionPage extends React.Component {
         }
         return (
             <>
-                <Tooltip />
+                <Tooltip/>
                 <MetaTags>
                     <title>{champion.name + " Matchups and Counters Season 10"} </title>
                     <meta name="description" content={champion.name + " lane matchups and counters for season 10 League of Legends, provided by challenger players."}/>

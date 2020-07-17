@@ -3,6 +3,8 @@ import Header from './Header';
 import Card from './Card';
 import '../../css/Table.css';
 
+/* This component is the majority of the landing page, the table holding every card. */
+
 export default class Table extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +27,7 @@ export default class Table extends React.Component {
         this.sortChampions = this.sortChampions.bind(this);
     }
 
+    // Make call to API to retrieve data for every champion
     componentDidMount() {
         var request = new XMLHttpRequest();
         request.open("GET", "https://api.champs.gg/api/champion/all");
@@ -91,6 +94,7 @@ export default class Table extends React.Component {
         });
     }
 
+    // Combines all customization options to provide the final list of champions to display
     sortChampions(champions) {
         if (this.state.search !== '' && this.state.search !== 'Search by name...') {
             champions = champions.filter(champ => champ.name.toUpperCase().includes(this.state.search.toUpperCase()));

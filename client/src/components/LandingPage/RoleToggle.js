@@ -1,5 +1,7 @@
 import React from 'react';
 
+/* This simple component handles what role is displayed on the landing page */
+
 export default class RoleToggle extends React.Component {
     constructor(props) {
         super(props);

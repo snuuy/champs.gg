@@ -3,6 +3,9 @@ import Table from './Table';
 import Logo from '../../assets/logo.png'
 import ReactGA from 'react-ga';
 import MetaTags from 'react-meta-tags'
+
+/* This component represents the entire landing page, "https://champs.gg/". */
+
 export default class LandingPage extends React.Component {
 
     constructor(props) {

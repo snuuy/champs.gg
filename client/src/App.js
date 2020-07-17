@@ -31,10 +31,10 @@ export default class App extends React.Component {
                 <div className="pt-3 w-100 my-3 footer">
                     <div className="px-3 text-center mx-auto">
                         <p className="text-center mx-auto small text-muted m-0" style={{ maxWidth: "500px" }}>
-                            champs.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games
+                        champs.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games
                         or anyone officially involved in producing or managing League of Legends. League of Legends
                         and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends
-                                                                                                                        © Riot Games, Inc.
+                        © Riot Games, Inc.
                 </p>
                         <p className="text-dark small text-center mt-3 mb-4">Contact: <b>champsdotgg@gmail.com</b><br />
                             © 2020 champs.gg. All rights reserved.</p>

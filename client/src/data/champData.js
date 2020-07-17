@@ -1,3 +1,5 @@
+/* This file stores every champion in the game, their display name, their ID, and what roles they belong to. */
+
 var champData = [
 	{
 		id: "Aatrox",

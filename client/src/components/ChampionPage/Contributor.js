@@ -1,11 +1,15 @@
 import React from 'react';
 import Linkify from 'react-linkify'
+
+/* This component is the information section sitting at the top of each champion page, providing information about the contributor. */
+
 export default class Contributor extends React.Component {
     render() {
         let { info, champion } = this.props;
         if (!info) {
             return (
                 <div className="text-muted py-auto my-auto py-5">
+                    {/* If the champion does not have a contributor. */}
                     We don't currently have information for {champion}. If you are or know an expert at {champion} and would like to contribute your opinions, please email us at champsdotgg@gmail.com.
                 </div>
             )

@@ -2,6 +2,8 @@ import React from 'react';
 import '../../css/Card.css';
 import Voting from '../Voting';
 
+/* This component is a card for a given champion on the landing page. */
+
 export default class Card extends React.Component {
     constructor(props) {
         super(props);
@@ -36,9 +38,7 @@ export default class Card extends React.Component {
                         </div>
                     </div>
 
-
                     <Voting userVote={this.state.userVote} champId={this.props.champId} rating={this.state.rating} isCard={true} />
-
                 </div>
             </div>
         );

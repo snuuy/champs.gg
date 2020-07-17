@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+/* Database schema for everything specific related to a given champion page */
+
 let counterSchema = new mongoose.Schema({
   champion: mongoose.Schema.Types.ObjectId,
   difficulty: Number,

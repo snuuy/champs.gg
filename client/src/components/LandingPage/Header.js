@@ -4,6 +4,8 @@ import RatingToggle from './RatingToggle.js';
 import RoleToggle from './RoleToggle.js';
 import '../../css/Header.css';
 
+/* This component is the utility bar directly below the logo on the landing page. */
+
 export default class Header extends React.Component {
     render() {
         return (

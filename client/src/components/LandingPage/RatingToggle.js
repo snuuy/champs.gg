@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../css/RatingToggle.css';
 
+/* This simple component handles the ascending/descending order of display on the landing page. */
+
 export default class RatingToggle extends React.Component {
     constructor(props) {
         super(props);

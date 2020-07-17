@@ -1,4 +1,7 @@
 const { Champion } = require("./services/dbService");
+
+/* This script uploads every champion in the game, along with their ID and roles */
+
 var champData = [
     {
         id: "Aatrox",

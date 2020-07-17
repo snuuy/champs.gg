@@ -3,6 +3,8 @@ const { Vote, Champion } = require("../services/dbService");
 
 module.exports = { scoreChampion };
 
+/* This file handles scoring the public voting for champions */
+
 function scoreChampion(name, score, ip, cb) {
   if (score > 5 || score < 1)
     cb(false, "Invalid score")

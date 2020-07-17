@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/Card.css';
 
+/* This component handles everything related to public voting of champion strength */
+
 export default class Voting extends React.Component {
     constructor(props) {
         super(props);
@@ -11,6 +13,7 @@ export default class Voting extends React.Component {
         };
     }
 
+    // Relatively arbitrarily set
     ratingToTier(rating) {
         if (rating == 0) return "?"
         if (rating >= 4.7) return "S+";

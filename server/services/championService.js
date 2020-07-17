@@ -4,19 +4,20 @@ const { Vote } = require("../services/dbService");
 
 module.exports = { getChampion, getAllChampions };
 
+// For champion pages
 async function getChampion(shortname, ip) {
   let champion = await Champion.findOne({ shortname: shortname })
     .populate("counters.champions.champion", "-counters -votes -contributors")
-    .lean()
+    .lean();
   if (champion == null) {
     throw new Error("Champion not found")
-    return;
   }
   const vote = await Vote.findOne({ ip: ip, champion: champion._id })
   if (vote) champion.userVote = vote.score
   return champion;
 }
 
+// For landing page
 async function getAllChampions(ip, cb) {
   const votes = await Vote.find({ ip: ip })
   Champion.find()
@@ -28,7 +29,6 @@ async function getAllChampions(ip, cb) {
       champions = []
       champs.forEach(champ => {
         let vote = votes.find((vote) => vote.champion == champ.id)
-        //console.log(vote)
         champions.push({
           name: champ.name,
           shortname: champ.shortname,
